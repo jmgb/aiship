@@ -35,7 +35,7 @@ get_header();
       </p>
 
       <div class="ap-hero__ctas">
-        <a href="/contact" class="ap-btn ap-btn--primary">Start a Project</a>
+        <a href="https://aiship.co/custom-ai-project/" class="ap-btn ap-btn--primary">Start a Project</a>
         <a href="#how-it-works" class="ap-btn ap-btn--secondary">See How It Works</a>
       </div>
 
@@ -326,7 +326,7 @@ get_header();
         We build custom. Every system is designed around your workflow,
         your data sources, and your execution environment.
       </p>
-      <a href="/contact" class="ap-btn ap-btn--primary ap-btn--lg">Start a Project</a>
+      <a href="https://aiship.co/custom-ai-project/" class="ap-btn ap-btn--primary ap-btn--lg">Start a Project</a>
     </div>
   </section>
 
