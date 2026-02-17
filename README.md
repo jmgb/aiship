@@ -1,55 +1,61 @@
-# AIShip Child Theme
+# AIShip — Divi Child Theme
 
-Divi Child Theme para [aiship.co](https://aiship.co/) — alojado en Hostinger.
+Child theme para [aiship.co](https://aiship.co/) · WordPress + Divi · Hostinger.
 
-## Contexto
+---
 
-La web **ya está construida y activa con Divi** (Elegant Themes). Este repositorio contiene el **tema hijo** que se carga encima de Divi sin modificarlo directamente.
+## Sobre AIShip
 
-El trabajo en este repo consiste en:
-- **Diseñar nuevas páginas** desde cero usando módulos de Divi
-- **Crear nuevas secciones** para añadir al sitio existente
-- **Modificar el diseño actual** (colores, tipografía, espaciados, comportamiento) sobreescribiendo estilos de Divi mediante CSS en `assets/css/custom.css`
-- **Añadir funcionalidad** personalizada vía PHP en `functions.php` o JS en `assets/js/app.js`
+**Software house especializado en FinTech y Capital Markets.**
 
-Todo cambio que afecte a lo que ya existe en Divi se hace desde el child theme, nunca editando el tema padre.
+AIShip diseña y desarrolla software de inteligencia financiera a medida. El producto principal analiza en tiempo real todos los registros que las compañías cotizadas de Estados Unidos publican en la SEC (10-K, 10-Q, 8-K, S-1...) y sus notas de prensa, los procesa con IA y genera informes de análisis detallados.
+
+Estos informes tienen dos usos principales:
+- **B2B white-label:** gestores de activos, family offices y RIAs los reempaquetan y envían a sus propios clientes con empresas en cartera
+- **Trading automatizado:** el sistema ejecuta órdenes de compra/venta (posiciones largas, cortas o nuevas) basándose en las señales detectadas
+
+**Modelo de negocio:** desarrollo a medida por cliente + retainer mensual de mantenimiento y mejoras.
+
+---
+
+## Este repositorio
+
+Contiene **únicamente el child theme**. El tema padre Divi vive en el servidor (`wp-content/themes/Divi/`) y no se modifica desde aquí.
+
+Flujo de despliegue:
+```
+git push → GitHub (jmgb/aiship) → Webhook → Hostinger wp-content/themes/aiship-child/
+```
+
+---
 
 ## Estructura
 
 ```
 aiship/
-├── style.css            # Cabecera del tema + estilos base
-├── functions.php        # Encola estilos y scripts del child
+├── style.css              # Cabecera del tema + variables CSS de marca
+├── functions.php          # Encola child styles y assets
 ├── assets/
-│   ├── css/
-│   │   └── custom.css   # Estilos personalizados
-│   └── js/
-│       └── app.js       # JavaScript personalizado
-└── CLAUDE.md
+│   ├── css/custom.css     # Personalizaciones CSS (sobreescribe estilos Divi)
+│   └── js/app.js          # JS personalizado (footer)
+└── CLAUDE.md              # Guía para Claude Code
 ```
+
+---
 
 ## Colores de marca
 
-| Nombre  | Hex       |
-|---------|-----------|
-| Navy    | `#01012C` |
-| Magenta | `#DB0EB7` |
-| Blanco  | `#ffffff` |
+| Nombre  | Hex       | Variable CSS         |
+|---------|-----------|----------------------|
+| Navy    | `#01012C` | `--color-bg`         |
+| Magenta | `#DB0EB7` | `--color-accent`     |
+| Blanco  | `#ffffff` | `--color-white`      |
 
-## Despliegue automático
+---
 
-Este repositorio está conectado a Hostinger mediante un webhook de GitHub Actions:
+## División de trabajo
 
-```
-Cambios en código
-      ↓
-git push → GitHub (jmgb/aiship)
-      ↓
-Webhook automático
-      ↓
-Hostinger → wp-content/themes/aiship-child/
-```
-
-Cada `git push` a `main` despliega automáticamente el contenido directamente en la carpeta del child theme en el servidor.
-
-> **Importante:** Este repositorio **solo contiene el tema hijo**. El tema padre Divi vive en `wp-content/themes/Divi/` en el servidor y no está en este repo ni puede modificarse desde aquí. Cualquier cambio al diseño o comportamiento de Divi debe hacerse sobreescribiendo desde el child theme.
+| Tarea | Herramienta |
+|---|---|
+| Textos, copy, estructura de páginas, menús, imágenes | WordPress / Divi Builder |
+| CSS, tipografía, animaciones, componentes custom, JS | Este child theme |
