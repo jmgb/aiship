@@ -7,6 +7,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **AIShip Child Theme** — Divi Child Theme para [aiship.co](https://aiship.co/).
 WordPress alojado en Hostinger. El tema padre es **Divi** (Elegant Themes).
 
+La web **ya está construida y en producción con Divi**. Este child theme se carga encima del tema padre sin modificarlo. El trabajo aquí es:
+
+- Diseñar **nuevas páginas** usando el Divi Builder
+- Crear **nuevas secciones** para añadir al sitio existente
+- **Modificar el diseño actual** sobreescribiendo estilos de Divi con CSS en `assets/css/custom.css`
+- Añadir **funcionalidad custom** vía PHP (`functions.php`) o JS (`assets/js/app.js`)
+
+Nunca se edita el tema padre Divi directamente. Todos los cambios van en este child theme.
+
 ## Repositorio remoto
 
 ```
