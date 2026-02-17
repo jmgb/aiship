@@ -48,7 +48,14 @@ aiship/
 - JS personalizado va en `assets/js/app.js` (cargado en footer)
 - `style.css` solo contiene la cabecera del tema y variables CSS globales
 
-## Despliegue
+## Despliegue automático
 
-Subir via FTP/SFTP a `wp-content/themes/aiship-child/` en Hostinger.
-Activar desde **Apariencia → Temas** en el panel de WordPress.
+Este repositorio está conectado a Hostinger mediante un webhook. Cada `git push` a `main` despliega automáticamente en el servidor:
+
+```
+git push → GitHub (jmgb/aiship) → Webhook → Hostinger wp-content/themes/aiship-child/
+```
+
+## Límite importante
+
+Este repo **es y solo es el child theme**. El tema padre Divi está en `wp-content/themes/Divi/` en el servidor — no está en este repositorio y nunca debe modificarse directamente. Todo cambio sobre el diseño o funcionalidad de Divi se hace sobreescribiendo desde este child theme.

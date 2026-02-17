@@ -36,9 +36,20 @@ aiship/
 | Magenta | `#DB0EB7` |
 | Blanco  | `#ffffff` |
 
-## Despliegue
+## Despliegue automático
 
-Subir el contenido de esta carpeta como tema hijo de Divi en:
-`wp-content/themes/aiship-child/`
+Este repositorio está conectado a Hostinger mediante un webhook de GitHub Actions:
 
-Activar desde **Apariencia → Temas** en el panel de WordPress.
+```
+Cambios en código
+      ↓
+git push → GitHub (jmgb/aiship)
+      ↓
+Webhook automático
+      ↓
+Hostinger → wp-content/themes/aiship-child/
+```
+
+Cada `git push` a `main` despliega automáticamente el contenido directamente en la carpeta del child theme en el servidor.
+
+> **Importante:** Este repositorio **solo contiene el tema hijo**. El tema padre Divi vive en `wp-content/themes/Divi/` en el servidor y no está en este repo ni puede modificarse desde aquí. Cualquier cambio al diseño o comportamiento de Divi debe hacerse sobreescribiendo desde el child theme.
