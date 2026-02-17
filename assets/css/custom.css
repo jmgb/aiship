@@ -1266,6 +1266,11 @@ a.et_pb_button {
   margin: 0;
 }
 
+#footer-info {
+  text-align: center;
+  width: 100%;
+}
+
 /* --- RESPONSIVE DEL TEMPLATE --- */
 @media (max-width: 980px) {
   .ap-docs-grid {
