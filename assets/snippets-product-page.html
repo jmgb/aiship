@@ -1,0 +1,212 @@
+<!--
+  AIShip — Snippets para la página Product (SEC Intelligence Analyzer)
+  Cada bloque va dentro de un módulo "Código" de Divi.
+  ================================================================= -->
+
+
+<!-- ============================================================
+  BLOQUE 1 — HERO DEL PRODUCTO
+  Sección: nueva sección full-width en Divi, fondo #01012C
+  Módulo: Code (pegar el HTML tal cual)
+  ============================================================ -->
+<div class="product-hero">
+
+  <div class="hero-eyebrow">
+    <span class="aiship-badge">SEC Intelligence Analyzer</span>
+  </div>
+
+  <h1>Every filing.<br><em>Analyzed in seconds.</em></h1>
+
+  <p class="hero-sub">
+    Our AI reads every 10-K, 10-Q, 8-K and press release published
+    by US-listed companies — the moment they go live — and turns them
+    into structured investment intelligence.
+  </p>
+
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+    <a href="/contact" class="et_pb_button et_pb_button_one">Start a Project</a>
+    <a href="#how-it-works" class="et_pb_button et_pb_button_two">See How It Works</a>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+  BLOQUE 2 — PIPELINE DE DATOS
+  Sección: id="how-it-works", fondo #04044a (aiship-section-alt)
+  Antes del bloque, añade un título Divi: "How It Works"
+  Módulo: Code
+  ============================================================ -->
+<div class="pipeline">
+
+  <div class="pipeline-node" data-aiship-animate>
+    <div class="node-icon">📡</div>
+    <span class="node-label">Sources</span>
+    <span class="node-sub">SEC EDGAR<br>Press Releases<br>IR Pages</span>
+  </div>
+
+  <span class="pipeline-arrow">→</span>
+
+  <div class="pipeline-node" data-aiship-animate>
+    <div class="node-icon">⚡</div>
+    <span class="node-label">Real-time<br>Ingestion</span>
+    <span class="node-sub">Monitored<br>24/7</span>
+  </div>
+
+  <span class="pipeline-arrow">→</span>
+
+  <div class="pipeline-node" data-aiship-animate>
+    <div class="node-icon">🧠</div>
+    <span class="node-label">AI Processing</span>
+    <span class="node-sub">LLM analysis<br>& extraction</span>
+  </div>
+
+  <span class="pipeline-arrow">→</span>
+
+  <div class="pipeline-node" data-aiship-animate>
+    <div class="node-icon">📊</div>
+    <span class="node-label">Structured<br>Intelligence</span>
+    <span class="node-sub">Reports,<br>signals, alerts</span>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+  BLOQUE 3 — DOCUMENTOS QUE ANALIZA
+  Sección: fondo #01012C
+  Título Divi antes: "What We Monitor"
+  Subtítulo Divi: "Every official disclosure US-listed companies publish."
+  Módulo: Code
+  ============================================================ -->
+<div class="doc-types-grid">
+
+  <div class="doc-type-item">
+    <span class="doc-code">10-K</span>
+    <span class="doc-name">Annual Report</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">10-Q</span>
+    <span class="doc-name">Quarterly Report</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">8-K</span>
+    <span class="doc-name">Material Events</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">S-1</span>
+    <span class="doc-name">IPO Registration</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">DEF 14A</span>
+    <span class="doc-name">Proxy Statement</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">PR</span>
+    <span class="doc-name">Press Releases</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">IR</span>
+    <span class="doc-name">Investor Relations</span>
+  </div>
+
+  <div class="doc-type-item">
+    <span class="doc-code">EC</span>
+    <span class="doc-name">Earnings Calls</span>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+  BLOQUE 4 — MUESTRA DE ANÁLISIS (TERMINAL)
+  Sección: fondo #04044a
+  Título Divi antes: "Intelligence Output"
+  Subtítulo: "This is what our system delivers — automatically."
+  Módulo: Code
+  ============================================================ -->
+<div class="analysis-output">
+
+  <div class="ao-header">
+    <div class="ao-dots">
+      <span class="ao-dot ao-dot-r"></span>
+      <span class="ao-dot ao-dot-y"></span>
+      <span class="ao-dot ao-dot-g"></span>
+    </div>
+    <span class="ao-title">aiship_analysis_engine · output</span>
+    <span class="ao-status">LIVE</span>
+  </div>
+
+  <div class="ao-body">
+    <span class="ao-comment"># SEC Filing detected — processing complete</span>
+    <span class="ao-sep">────────────────────────────────────────</span>
+
+    <span class="ao-label">COMPANY       </span><span class="ao-value">Acme Corp (ACME) · NASDAQ</span>
+    <span class="ao-label">FILING        </span><span class="ao-value">8-K · Material Event</span>
+    <span class="ao-label">FILED         </span><span class="ao-value">2026-02-17 · 08:31 EST</span>
+    <span class="ao-label">PROCESSED IN  </span><span class="ao-value">4.2s</span>
+
+    <span class="ao-sep">────────────────────────────────────────</span>
+
+    <span class="ao-label">EXECUTIVE SUMMARY</span>
+    <span class="ao-meta">  Company reports Q4 revenue of $2.8B (+18% YoY), beating consensus
+  by 6.2%. Operating margin expanded 140bps. Raises full-year guidance
+  by 8%. CFO departure announced — effective March 2026.</span>
+
+    <span class="ao-sep">────────────────────────────────────────</span>
+
+    <span class="ao-label">MATERIAL CHANGES</span>
+    <span class="ao-pos">  [+] Revenue beat: $2.8B vs $2.64B est.</span>
+    <span class="ao-pos">  [+] Guidance raised: FY2026 $11.2B → $12.1B</span>
+    <span class="ao-pos">  [+] Margin expansion: +140bps</span>
+    <span class="ao-neg">  [-] CFO departure — transition risk</span>
+    <span class="ao-neg">  [-] EMEA segment -4% QoQ</span>
+
+    <span class="ao-sep">────────────────────────────────────────</span>
+
+    <span class="ao-label">SIGNAL          </span><span class="ao-pos">BULLISH · Confidence 0.84</span>
+    <span class="ao-label">SUGGESTED ACTION</span><span class="ao-value">Review LONG position · Monitor CFO transition</span>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+  BLOQUE 5 — DOS CANALES DE USO
+  Sección: fondo #01012C
+  Título Divi antes: "Built for Two Workflows"
+  Módulo: Code
+  ============================================================ -->
+<div class="channels-grid">
+
+  <div class="channel-card">
+    <div class="channel-icon">🏦</div>
+    <div class="channel-title">White-Label Intelligence</div>
+    <div class="channel-sub">For asset managers & advisors</div>
+    <ul class="channel-list">
+      <li>Branded reports delivered to your clients automatically</li>
+      <li>Custom cadence: real-time alerts or daily digests</li>
+      <li>Filters by sector, market cap, portfolio holdings</li>
+      <li>Ready to forward — no analyst time required</li>
+    </ul>
+  </div>
+
+  <div class="channel-card">
+    <div class="channel-icon">⚡</div>
+    <div class="channel-title">Automated Trading Signals</div>
+    <div class="channel-sub">For prop desks & quant funds</div>
+    <ul class="channel-list">
+      <li>Signal detected → order executed in seconds</li>
+      <li>Long, short, or new position creation</li>
+      <li>Integrates with IBKR, Alpaca and custom brokers</li>
+      <li>Full audit trail per signal and execution</li>
+    </ul>
+  </div>
+
+</div>
