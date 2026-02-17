@@ -1333,6 +1333,10 @@ a.et_pb_button {
   text-align: center;
 }
 
+.bottom-nav li.current-menu-item > a {
+  color: #DB0EB7 !important;
+}
+
 #footer-info {
   text-align: center;
   width: 100%;
