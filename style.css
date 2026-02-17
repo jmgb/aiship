@@ -1,0 +1,25 @@
+/*
+Theme Name:   AIShip Child
+Theme URI:    https://aiship.co/
+Description:  Divi Child Theme para AIShip — Growth Partner powered by AI
+Author:       AIShip
+Author URI:   https://aiship.co/
+Template:     Divi
+Version:      1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  aiship-child
+*/
+
+/* ============================================
+   BRAND VARIABLES
+   ============================================ */
+:root {
+  --color-bg:       #01012C;   /* Navy deep */
+  --color-accent:   #DB0EB7;   /* Magenta   */
+  --color-white:    #ffffff;
+}
+
+/* ============================================
+   CUSTOM STYLES — añadir personalizaciones aquí
+   ============================================ */
