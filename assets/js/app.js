@@ -12,10 +12,18 @@
      data-aiship-animate para que aparezcan al entrar en viewport.
      ---------------------------------------------------------- */
   function initScrollAnimations() {
-    const targets = document.querySelectorAll('[data-aiship-animate]');
+    var targets = document.querySelectorAll('[data-aiship-animate]');
     if (!targets.length || !('IntersectionObserver' in window)) return;
 
-    const observer = new IntersectionObserver(
+    // Aplicar delay escalonado a siblings del mismo padre
+    targets.forEach(function (el, i) {
+      var siblings = el.parentElement.querySelectorAll('[data-aiship-animate]');
+      siblings.forEach(function (sib, idx) {
+        sib.style.transitionDelay = (idx * 0.1) + 's';
+      });
+    });
+
+    var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -24,13 +32,10 @@
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
 
-    targets.forEach(function (el) {
-      el.style.opacity = '0';
-      observer.observe(el);
-    });
+    targets.forEach(function (el) { observer.observe(el); });
   }
 
   /* ----------------------------------------------------------

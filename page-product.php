@@ -16,6 +16,7 @@ get_header();
        ========================================================= -->
   <section class="ap-section ap-hero">
     <div class="ap-glow-top"></div>
+    <div class="ap-dots-pattern"></div>
     <div class="ap-container">
 
       <div class="ap-hero__eyebrow">
@@ -38,6 +39,72 @@ get_header();
         <a href="#how-it-works" class="ap-btn ap-btn--secondary">See How It Works</a>
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       TICKER — barra de tickers bursátiles animada
+       ========================================================= -->
+  <div class="ap-ticker-bar" aria-hidden="true">
+    <div class="ap-ticker-track">
+      <?php
+      $tickers = [
+        [ 'sym' => 'AAPL',  'chg' => '+1.24%',  'pos' => true  ],
+        [ 'sym' => 'MSFT',  'chg' => '+0.87%',  'pos' => true  ],
+        [ 'sym' => 'NVDA',  'chg' => '+3.41%',  'pos' => true  ],
+        [ 'sym' => 'GOOGL', 'chg' => '-0.53%',  'pos' => false ],
+        [ 'sym' => 'META',  'chg' => '+2.18%',  'pos' => true  ],
+        [ 'sym' => 'AMZN',  'chg' => '+0.66%',  'pos' => true  ],
+        [ 'sym' => 'TSLA',  'chg' => '-1.92%',  'pos' => false ],
+        [ 'sym' => 'JPM',   'chg' => '+0.44%',  'pos' => true  ],
+        [ 'sym' => 'BAC',   'chg' => '-0.31%',  'pos' => false ],
+        [ 'sym' => 'GS',    'chg' => '+1.07%',  'pos' => true  ],
+        [ 'sym' => 'BRK.B', 'chg' => '+0.29%',  'pos' => true  ],
+        [ 'sym' => 'V',     'chg' => '+0.73%',  'pos' => true  ],
+      ];
+      // Duplicamos para loop continuo
+      $all = array_merge( $tickers, $tickers );
+      foreach ( $all as $t ) :
+        $cls = $t['pos'] ? 'pos' : 'neg';
+      ?>
+        <span class="ap-ticker-item">
+          <span class="ap-ticker-sym"><?php echo esc_html( $t['sym'] ); ?></span>
+          <span class="ap-ticker-chg ap-ticker-chg--<?php echo $cls; ?>"><?php echo esc_html( $t['chg'] ); ?></span>
+        </span>
+      <?php endforeach; ?>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       STATS — números de credibilidad
+       ========================================================= -->
+  <section class="ap-section ap-stats-bar">
+    <div class="ap-container">
+      <div class="ap-stats-grid">
+
+        <div class="ap-stat-item" data-aiship-animate>
+          <span class="ap-stat__value aiship-counter" data-target="14000" data-suffix="+">0</span>
+          <span class="ap-stat__label">Filings monitored / day</span>
+        </div>
+
+        <div class="ap-stat-item ap-stat-item--center" data-aiship-animate>
+          <span class="ap-stat__value">&lt; 5<span class="ap-stat__unit">s</span></span>
+          <span class="ap-stat__label">Average processing time</span>
+        </div>
+
+        <div class="ap-stat-item" data-aiship-animate>
+          <span class="ap-stat__value">8</span>
+          <span class="ap-stat__label">Document types covered</span>
+        </div>
+
+        <div class="ap-stat-item" data-aiship-animate>
+          <span class="ap-stat__value">24<span class="ap-stat__unit">/7</span></span>
+          <span class="ap-stat__label">Continuous monitoring</span>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -187,7 +254,7 @@ get_header();
 
 <span class="t-key">SIGNAL         </span> <span class="t-pos">BULLISH · Confidence 0.84</span>
 <span class="t-key">SUGGESTED      </span> <span class="t-val">Review LONG · Monitor CFO transition</span>
-</pre>
+<span class="ap-terminal__cursor">█</span></pre>
         </div>
 
       </div>
