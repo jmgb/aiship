@@ -1256,6 +1256,78 @@ a.et_pb_button {
   line-height: 1.7;
 }
 
+/* ==========================================================
+   14. PAGE TEMPLATE — #aiship-contact (Custom AI Project)
+   ========================================================== */
+
+#aiship-contact {
+  background-color: var(--c-bg);
+}
+
+.ac-section {
+  padding: var(--space-24) 0;
+  position: relative;
+}
+
+.ac-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+.ac-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.ac-title {
+  font-size: clamp(2.5rem, 6vw, var(--text-5xl));
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--c-white);
+  margin: 0;
+}
+
+.ac-title em {
+  font-style: normal;
+  color: var(--c-accent);
+}
+
+.ac-sub {
+  font-size: var(--text-lg);
+  color: var(--c-gray-2);
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.ac-form-wrapper {
+  background-color: var(--c-bg-2);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  overflow: hidden;
+}
+
+.ac-form-wrapper iframe {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .ac-section {
+    padding: var(--space-16) 0;
+  }
+
+  .ac-form-wrapper {
+    padding: var(--space-4);
+  }
+}
+
 /* --- FOOTER MENU --- */
 #menu-footer {
   text-align: center;
