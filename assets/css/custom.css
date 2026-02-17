@@ -1,0 +1,491 @@
+/* ==========================================================
+   AIShip Child Theme — custom.css
+   Cargado después de style.css. Sobreescribe estilos de Divi.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. FUENTES
+   ---------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ----------------------------------------------------------
+   2. VARIABLES GLOBALES
+   ---------------------------------------------------------- */
+:root {
+  /* Colores base */
+  --c-bg:          #01012C;
+  --c-bg-2:        #04044a;   /* navy ligeramente más claro para cards */
+  --c-bg-3:        #080857;   /* para hover states */
+  --c-accent:      #DB0EB7;
+  --c-accent-dim:  rgba(219, 14, 183, 0.15);
+  --c-accent-glow: rgba(219, 14, 183, 0.35);
+  --c-white:       #ffffff;
+  --c-gray-1:      #e8e8f0;
+  --c-gray-2:      #9898b0;
+  --c-gray-3:      #3a3a5c;
+
+  /* Colores semánticos (datos financieros) */
+  --c-green:       #00d68f;
+  --c-red:         #ff4d6d;
+  --c-yellow:      #ffd166;
+
+  /* Tipografía */
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Courier New', monospace;
+
+  /* Escala tipográfica */
+  --text-xs:   0.75rem;   /*  12px */
+  --text-sm:   0.875rem;  /*  14px */
+  --text-base: 1rem;      /*  16px */
+  --text-lg:   1.125rem;  /*  18px */
+  --text-xl:   1.25rem;   /*  20px */
+  --text-2xl:  1.5rem;    /*  24px */
+  --text-3xl:  1.875rem;  /*  30px */
+  --text-4xl:  2.25rem;   /*  36px */
+  --text-5xl:  3rem;      /*  48px */
+  --text-6xl:  3.75rem;   /*  60px */
+
+  /* Espaciados */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-24:  6rem;
+
+  /* Bordes */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --border:    1px solid var(--c-gray-3);
+
+  /* Sombras */
+  --shadow-glow: 0 0 32px var(--c-accent-glow);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ----------------------------------------------------------
+   3. RESET / GLOBAL
+   ---------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--c-bg);
+  color: var(--c-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--c-accent);
+  transition: opacity 0.2s ease;
+}
+a:hover { opacity: 0.8; }
+
+/* ----------------------------------------------------------
+   4. TIPOGRAFÍA — sobreescribe Divi
+   ---------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.et_pb_slide_title,
+.et_pb_module_header {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--c-white);
+}
+
+h1, .aiship-h1 { font-size: clamp(2.5rem, 6vw, var(--text-6xl)); }
+h2, .aiship-h2 { font-size: clamp(1.75rem, 4vw, var(--text-4xl)); }
+h3, .aiship-h3 { font-size: clamp(1.25rem, 2.5vw, var(--text-2xl)); }
+
+p, .et_pb_text_inner {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--c-gray-1);
+}
+
+/* Texto monospace para datos/código */
+.aiship-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+/* ----------------------------------------------------------
+   5. BOTONES — sobreescribe Divi
+   ---------------------------------------------------------- */
+.et_pb_button,
+.et_pb_promo_button,
+a.et_pb_button {
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  font-size: var(--text-sm) !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  border-radius: var(--radius-md) !important;
+  padding: 0.85em 2em !important;
+  transition: all 0.25s ease !important;
+}
+
+/* Botón primario */
+.et_pb_button_one,
+.et_pb_button.aiship-btn-primary {
+  background-color: var(--c-accent) !important;
+  border-color: var(--c-accent) !important;
+  color: var(--c-white) !important;
+}
+.et_pb_button_one:hover,
+.et_pb_button.aiship-btn-primary:hover {
+  background-color: transparent !important;
+  box-shadow: var(--shadow-glow) !important;
+}
+
+/* Botón secundario / outline */
+.et_pb_button_two,
+.et_pb_button.aiship-btn-secondary {
+  background-color: transparent !important;
+  border: 1px solid var(--c-gray-3) !important;
+  color: var(--c-white) !important;
+}
+.et_pb_button_two:hover,
+.et_pb_button.aiship-btn-secondary:hover {
+  border-color: var(--c-accent) !important;
+  color: var(--c-accent) !important;
+}
+
+/* ----------------------------------------------------------
+   6. NAVEGACIÓN — sobreescribe Divi
+   ---------------------------------------------------------- */
+#main-header,
+#main-header .et_pb_section {
+  background-color: rgba(1, 1, 44, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--c-gray-3);
+}
+
+#et-top-navigation nav > ul > li > a,
+#et-top-navigation nav > ul > li > a:visited {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--c-gray-1) !important;
+  letter-spacing: 0.02em;
+}
+
+#et-top-navigation nav > ul > li > a:hover {
+  color: var(--c-white) !important;
+}
+
+#et-top-navigation nav > ul > li.current-menu-item > a {
+  color: var(--c-accent) !important;
+}
+
+/* ----------------------------------------------------------
+   7. SECCIONES / LAYOUT
+   ---------------------------------------------------------- */
+.et_pb_section {
+  background-color: var(--c-bg);
+}
+
+/* Sección con fondo ligeramente más claro */
+.et_pb_section.aiship-section-alt {
+  background-color: var(--c-bg-2);
+}
+
+/* Línea divisoria sutil */
+.et_pb_section + .et_pb_section {
+  border-top: var(--border);
+}
+
+/* ----------------------------------------------------------
+   8. COMPONENTES FINTECH
+   ---------------------------------------------------------- */
+
+/* --- Badge / Tag --- */
+.aiship-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 100px;
+  border: 1px solid var(--c-accent);
+  color: var(--c-accent);
+  background-color: var(--c-accent-dim);
+}
+
+.aiship-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--c-accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Badge neutro */
+.aiship-badge.neutral {
+  border-color: var(--c-gray-3);
+  color: var(--c-gray-2);
+  background-color: transparent;
+}
+.aiship-badge.neutral::before { display: none; }
+
+/* --- Card de producto --- */
+.aiship-card {
+  background-color: var(--c-bg-2);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.aiship-card:hover {
+  border-color: var(--c-accent);
+  transform: translateY(-4px);
+}
+
+.aiship-card .card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-4);
+}
+
+.aiship-card .card-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: var(--space-3);
+}
+
+.aiship-card .card-body {
+  font-size: var(--text-sm);
+  color: var(--c-gray-2);
+  line-height: 1.7;
+}
+
+/* --- Stat / Métrica --- */
+.aiship-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.aiship-stat .stat-value {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--c-white);
+  line-height: 1;
+}
+
+.aiship-stat .stat-value.accent { color: var(--c-accent); }
+.aiship-stat .stat-value.green  { color: var(--c-green); }
+
+.aiship-stat .stat-label {
+  font-size: var(--text-sm);
+  color: var(--c-gray-2);
+  font-weight: 400;
+}
+
+/* --- Ticker / dato en tiempo real --- */
+.aiship-ticker {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--c-green);
+  background-color: rgba(0, 214, 143, 0.08);
+  border: 1px solid rgba(0, 214, 143, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  display: inline-block;
+}
+
+.aiship-ticker.negative {
+  color: var(--c-red);
+  background-color: rgba(255, 77, 109, 0.08);
+  border-color: rgba(255, 77, 109, 0.2);
+}
+
+/* --- Flujo de datos (SEC → AI → Output) --- */
+.aiship-flow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.aiship-flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 120px;
+}
+
+.aiship-flow-step .step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--c-bg-2);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.aiship-flow-step .step-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-gray-2);
+}
+
+.aiship-flow-arrow {
+  color: var(--c-gray-3);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* --- Terminal / bloque de código --- */
+.aiship-terminal {
+  background-color: #000014;
+  border: var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.aiship-terminal .terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--c-bg-3);
+  border-bottom: var(--border);
+}
+
+.aiship-terminal .terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.aiship-terminal .terminal-dot:nth-child(1) { background: #ff5f57; }
+.aiship-terminal .terminal-dot:nth-child(2) { background: #ffbd2e; }
+.aiship-terminal .terminal-dot:nth-child(3) { background: #28c840; }
+
+.aiship-terminal .terminal-body {
+  padding: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  color: var(--c-gray-1);
+}
+
+.aiship-terminal .t-comment { color: var(--c-gray-3); }
+.aiship-terminal .t-key     { color: var(--c-accent); }
+.aiship-terminal .t-value   { color: var(--c-green); }
+.aiship-terminal .t-string  { color: var(--c-yellow); }
+
+/* --- Línea divisora con label --- */
+.aiship-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-12) 0;
+}
+
+.aiship-divider::before,
+.aiship-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--c-gray-3);
+}
+
+.aiship-divider span {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--c-gray-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------
+   9. EFECTOS Y ANIMACIONES
+   ---------------------------------------------------------- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { box-shadow: 0 0 20px var(--c-accent-glow); }
+  50%       { box-shadow: 0 0 40px var(--c-accent-glow), 0 0 80px rgba(219,14,183,0.15); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes data-stream {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Clase de animación de entrada */
+.aiship-fade-up {
+  animation: fade-up 0.6s ease forwards;
+}
+
+/* Glow sobre elemento acento */
+.aiship-glow {
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+
+/* Delay helpers */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* ----------------------------------------------------------
+   10. RESPONSIVE
+   ---------------------------------------------------------- */
+@media (max-width: 980px) {
+  .aiship-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aiship-flow-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-4xl: 2rem;
+    --text-5xl: 2.5rem;
+    --text-6xl: 3rem;
+  }
+
+  .aiship-card {
+    padding: var(--space-6);
+  }
+}
