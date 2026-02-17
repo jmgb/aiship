@@ -1337,6 +1337,10 @@ a.et_pb_button {
   color: #DB0EB7 !important;
 }
 
+.mobile_menu_bar::before {
+  color: #ffffff !important;
+}
+
 #footer-info {
   text-align: center;
   width: 100%;
