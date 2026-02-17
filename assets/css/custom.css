@@ -1333,7 +1333,6 @@ a.et_pb_button {
   text-align: center;
 }
 
-.bottom-nav li > a,
 .bottom-nav li.current-menu-item > a {
   color: #DB0EB7 !important;
 }
