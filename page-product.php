@@ -49,20 +49,7 @@ get_header();
   <div class="ap-ticker-bar" aria-hidden="true">
     <div class="ap-ticker-track">
       <?php
-      $tickers = [
-        [ 'sym' => 'AAPL',  'chg' => '+1.24%',  'pos' => true  ],
-        [ 'sym' => 'MSFT',  'chg' => '+0.87%',  'pos' => true  ],
-        [ 'sym' => 'NVDA',  'chg' => '+3.41%',  'pos' => true  ],
-        [ 'sym' => 'GOOGL', 'chg' => '-0.53%',  'pos' => false ],
-        [ 'sym' => 'META',  'chg' => '+2.18%',  'pos' => true  ],
-        [ 'sym' => 'AMZN',  'chg' => '+0.66%',  'pos' => true  ],
-        [ 'sym' => 'TSLA',  'chg' => '-1.92%',  'pos' => false ],
-        [ 'sym' => 'JPM',   'chg' => '+0.44%',  'pos' => true  ],
-        [ 'sym' => 'BAC',   'chg' => '-0.31%',  'pos' => false ],
-        [ 'sym' => 'GS',    'chg' => '+1.07%',  'pos' => true  ],
-        [ 'sym' => 'BRK.B', 'chg' => '+0.29%',  'pos' => true  ],
-        [ 'sym' => 'V',     'chg' => '+0.73%',  'pos' => true  ],
-      ];
+      $tickers = aiship_get_tickers();
       // Duplicamos para loop continuo
       $all = array_merge( $tickers, $tickers );
       foreach ( $all as $t ) :
