@@ -18,27 +18,126 @@ get_header();
     <div class="ap-glow-top"></div>
     <div class="ap-dots-pattern"></div>
     <div class="ap-container">
+      <div class="ap-hero__grid">
 
-      <div class="ap-hero__eyebrow">
-        <span class="aiship-badge">Financial Intelligence Engine</span>
+        <!-- Copy -->
+        <div class="ap-hero__copy">
+
+          <div class="ap-hero__eyebrow">
+            <span class="aiship-badge">Financial Intelligence Engine</span>
+          </div>
+
+          <h1 class="ap-hero__title">
+            Every corporate disclosure.<br>
+            <em>Analyzed in seconds.</em>
+          </h1>
+
+          <p class="ap-hero__sub">
+            Our AI monitors SEC filings, press releases, NASDAQ and FINRA
+            notifications, and investor communications from U.S.-listed companies
+            the moment they go live — transforming them into structured investment intelligence.
+          </p>
+
+          <div class="ap-hero__ctas">
+            <a href="https://aiship.co/custom-ai-project/" class="ap-btn ap-btn--primary">Start a Project</a>
+            <a href="#how-it-works" class="ap-btn ap-btn--secondary">See How It Works</a>
+          </div>
+
+        </div>
+
+        <!-- Live feed animation -->
+        <div class="ap-hero__visual">
+          <div class="ap-notif-panel">
+
+            <div class="ap-notif-panel__bar">
+              <div class="ap-notif-panel__dots">
+                <span class="ap-notif-panel__dot ap-notif-panel__dot--r"></span>
+                <span class="ap-notif-panel__dot ap-notif-panel__dot--y"></span>
+                <span class="ap-notif-panel__dot ap-notif-panel__dot--g"></span>
+              </div>
+              <span class="ap-notif-panel__title">aiship_engine · live_feed</span>
+              <span class="ap-notif-panel__live">● LIVE</span>
+            </div>
+
+            <div class="ap-notif-viewport">
+
+              <div class="ap-notif-feed">
+
+                <!-- Alert 1: 8-K NVDA -->
+                <div class="ap-alert ap-alert--1">
+                  <div class="ap-alert__source">
+                    <span class="ap-alert__badge">8-K</span>
+                    <span class="ap-alert__ticker">NVDA · NASDAQ</span>
+                    <span class="ap-alert__time">08:31 EST</span>
+                  </div>
+                  <div class="ap-alert__title">Material Event detected</div>
+                  <div class="ap-alert__meta">Revenue guidance raised · CEO commentary</div>
+                </div>
+
+                <!-- Processing 1 -->
+                <div class="ap-alert ap-alert--proc ap-alert--2">
+                  <span class="ap-alert__proc-text">🧠 Analyzing<span class="ap-dots">...</span></span>
+                </div>
+
+                <!-- Result 1 -->
+                <div class="ap-alert ap-alert--result ap-alert--3">
+                  <div class="ap-alert__row"><span class="ap-alert__key">SIGNAL</span><span class="ap-alert__pos">BULLISH · 0.89</span></div>
+                  <div class="ap-alert__row"><span class="ap-alert__key">SUMMARY</span><span class="ap-alert__val">Guidance +22% · EPS beat $4.28 vs $3.91</span></div>
+                </div>
+
+                <!-- Alert 2: Form 4 AAPL -->
+                <div class="ap-alert ap-alert--4">
+                  <div class="ap-alert__source">
+                    <span class="ap-alert__badge ap-alert__badge--insider">Form 4</span>
+                    <span class="ap-alert__ticker">AAPL · CEO</span>
+                    <span class="ap-alert__time">09:14 EST</span>
+                  </div>
+                  <div class="ap-alert__title">Insider Buy</div>
+                  <div class="ap-alert__meta ap-alert__meta--pos">+285,000 shares · $62.1M</div>
+                </div>
+
+                <!-- Alert 3: PR JPM -->
+                <div class="ap-alert ap-alert--5">
+                  <div class="ap-alert__source">
+                    <span class="ap-alert__badge ap-alert__badge--pr">PR</span>
+                    <span class="ap-alert__ticker">JPM · NYSE</span>
+                    <span class="ap-alert__time">07:05 EST</span>
+                  </div>
+                  <div class="ap-alert__title">Q4 Earnings Beat</div>
+                  <div class="ap-alert__meta">EPS $4.81 vs $4.11 est. · Net income +18% YoY</div>
+                </div>
+
+                <!-- Processing 2 -->
+                <div class="ap-alert ap-alert--proc ap-alert--6">
+                  <span class="ap-alert__proc-text">🧠 Analyzing<span class="ap-dots">...</span></span>
+                </div>
+
+                <!-- Result 2 -->
+                <div class="ap-alert ap-alert--result ap-alert--7">
+                  <div class="ap-alert__row"><span class="ap-alert__key">SIGNAL</span><span class="ap-alert__pos">BULLISH · 0.91</span></div>
+                  <div class="ap-alert__row"><span class="ap-alert__key">ACTION</span><span class="ap-alert__val">Review LONG · Initiate position</span></div>
+                </div>
+
+                <!-- Delivery -->
+                <div class="ap-alert ap-alert--delivery ap-alert--8">
+                  📲 Delivered → Telegram · WhatsApp · API
+                </div>
+
+              </div>
+
+              <!-- Closing card -->
+              <div class="ap-notif-closing">
+                <div class="ap-notif-closing__inner">
+                  <p>3 signals processed<br><em>&lt; 5 seconds each</em></p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
       </div>
-
-      <h1 class="ap-hero__title">
-        Every disclosure.<br>
-        <em>Analyzed in seconds.</em>
-      </h1>
-
-      <p class="ap-hero__sub">
-        Our AI monitors every SEC filing, press release, earnings call
-        and investor communication from US-listed companies — the moment
-        they go live — turning them into structured investment intelligence.
-      </p>
-
-      <div class="ap-hero__ctas">
-        <a href="https://aiship.co/custom-ai-project/" class="ap-btn ap-btn--primary">Start a Project</a>
-        <a href="#how-it-works" class="ap-btn ap-btn--secondary">See How It Works</a>
-      </div>
-
     </div>
   </section>
 
@@ -95,11 +194,6 @@ get_header();
         </div>
 
         <div class="ap-stat-item" data-aiship-animate>
-          <span class="ap-stat__value">10<span class="ap-stat__unit">+</span></span>
-          <span class="ap-stat__label">Source types monitored</span>
-        </div>
-
-        <div class="ap-stat-item" data-aiship-animate>
           <span class="ap-stat__value">24<span class="ap-stat__unit">/7</span></span>
           <span class="ap-stat__label">Continuous monitoring</span>
         </div>
@@ -126,7 +220,7 @@ get_header();
         <div class="ap-pipeline__node">
           <div class="ap-pipeline__icon">📡</div>
           <div class="ap-pipeline__label">Sources</div>
-          <div class="ap-pipeline__sub">SEC EDGAR · Press Releases · IR Pages</div>
+          <div class="ap-pipeline__sub">SEC EDGAR · NASDAQ · FINRA · Press Releases · IR Pages</div>
         </div>
 
         <div class="ap-pipeline__arrow">→</div>
@@ -150,7 +244,15 @@ get_header();
         <div class="ap-pipeline__node">
           <div class="ap-pipeline__icon">📊</div>
           <div class="ap-pipeline__label">Structured Intelligence</div>
-          <div class="ap-pipeline__sub">Reports · Signals · Alerts</div>
+          <div class="ap-pipeline__sub">Reports · Signals · Alerts · Custom outputs</div>
+        </div>
+
+        <div class="ap-pipeline__arrow">→</div>
+
+        <div class="ap-pipeline__node">
+          <div class="ap-pipeline__icon">📲</div>
+          <div class="ap-pipeline__label">Delivery</div>
+          <div class="ap-pipeline__sub">WhatsApp · Telegram · Email · API · SaaS</div>
         </div>
 
       </div>
@@ -168,7 +270,7 @@ get_header();
       <div class="ap-section-header">
         <span class="aiship-badge neutral">Coverage</span>
         <h2>What We Monitor</h2>
-        <p>From SEC filings to earnings calls — we cover the sources that move markets.</p>
+        <p>SEC filings, NASDAQ &amp; FINRA notifications, press releases — every source that moves markets.</p>
       </div>
 
       <div class="ap-docs-grid">
@@ -185,7 +287,6 @@ get_header();
           [ 'code' => '13-F',    'name' => 'Institutional Holdings', 'desc' => 'What the largest funds own each quarter' ],
           [ 'code' => '20-F',    'name' => 'Foreign Filer Report',   'desc' => 'Non-US companies listed on US exchanges' ],
           [ 'code' => 'PR',      'name' => 'Press Releases',        'desc' => 'Official company announcements' ],
-          [ 'code' => 'EC',      'name' => 'Earnings Calls',        'desc' => 'Transcript analysis & tone detection' ],
         ];
         foreach ( $docs as $doc ) : ?>
           <div class="ap-doc-item">
@@ -220,7 +321,8 @@ get_header();
       <div class="ap-section-header">
         <span class="aiship-badge neutral">Output</span>
         <h2>Intelligence Output</h2>
-        <p>This is what our system delivers — automatically, seconds after a filing goes live.</p>
+        <p>This is what our system delivers — automatically, seconds after a filing goes live.
+        Output format and delivery channel are fully customizable: email, Telegram, WhatsApp, API integration, or embedded in your own platform.</p>
       </div>
 
       <div class="ap-terminal">

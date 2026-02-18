@@ -961,7 +961,7 @@ a.et_pb_button {
 /* --- PIPELINE --- */
 .ap-pipeline {
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
   align-items: start;
   gap: var(--space-4);
   background-color: var(--c-bg-3);
@@ -1276,6 +1276,432 @@ a.et_pb_button {
 }
 
 /* ==========================================================
+   15. HERO — NOTIFICATION PANEL ANIMATION
+   ========================================================== */
+
+/* --- Hero 2-column grid --- */
+.ap-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.ap-hero__copy {
+  text-align: left;
+}
+
+.ap-hero__copy .ap-hero__sub {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ap-hero__copy .ap-hero__ctas {
+  justify-content: flex-start;
+}
+
+.ap-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+/* Override centrado del hero cuando hay grid */
+.ap-hero .ap-container {
+  text-align: left;
+}
+
+/* --- Panel container --- */
+.ap-notif-panel {
+  width: 100%;
+  max-width: 360px;
+  background-color: #000014;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-card), 0 0 60px rgba(219, 14, 183, 0.08);
+}
+
+/* --- Header bar --- */
+.ap-notif-panel__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--c-bg-3);
+  border-bottom: var(--border);
+}
+
+.ap-notif-panel__dots {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.ap-notif-panel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.ap-notif-panel__dot--r { background: #ff5f57; }
+.ap-notif-panel__dot--y { background: #ffbd2e; }
+.ap-notif-panel__dot--g { background: #28c840; }
+
+.ap-notif-panel__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--c-gray-2);
+  flex: 1;
+  text-align: center;
+}
+
+.ap-notif-panel__live {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--c-green);
+  flex-shrink: 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* --- Viewport --- */
+.ap-notif-viewport {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Gradient fade top/bottom */
+.ap-notif-viewport::before,
+.ap-notif-viewport::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 28px;
+  z-index: 5;
+  pointer-events: none;
+}
+.ap-notif-viewport::before {
+  top: 0;
+  background: linear-gradient(to bottom, #000014, transparent);
+}
+.ap-notif-viewport::after {
+  bottom: 0;
+  background: linear-gradient(to top, #000014, transparent);
+}
+
+/* --- Feed scroll (28s cycle) --- */
+/* Cards 1-4 fit in viewport (≈284px), scroll starts at card 5 */
+.ap-notif-feed {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  animation: apFeedScroll 28s ease-in-out infinite;
+}
+
+@keyframes apFeedScroll {
+  0%, 37.5%  { transform: translateY(0); }
+  48.2%      { transform: translateY(-66px); }
+  55.4%      { transform: translateY(-114px); }
+  66.1%      { transform: translateY(-181px); }
+  75%        { transform: translateY(-217px); }
+  91.1%      { transform: translateY(-217px); }
+  100%       { transform: translateY(0); }
+}
+
+/* --- Base alert card --- */
+.ap-alert {
+  background-color: var(--c-bg-2);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  opacity: 0;
+  transform: translateY(10px);
+  flex-shrink: 0;
+}
+
+/* --- Source row --- */
+.ap-alert__source {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.ap-alert__badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--c-accent);
+  background-color: var(--c-accent-dim);
+  border: 1px solid var(--c-accent);
+  border-radius: 4px;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+
+.ap-alert__badge--insider {
+  color: var(--c-yellow);
+  background-color: rgba(255, 209, 102, 0.10);
+  border-color: rgba(255, 209, 102, 0.40);
+}
+
+.ap-alert__badge--pr {
+  color: #60a5fa;
+  background-color: rgba(96, 165, 250, 0.10);
+  border-color: rgba(96, 165, 250, 0.30);
+}
+
+.ap-alert__ticker {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--c-white);
+  letter-spacing: 0.03em;
+}
+
+.ap-alert__time {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-gray-3);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.ap-alert__title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-white);
+  margin-bottom: 2px;
+}
+
+.ap-alert__meta {
+  font-size: var(--text-xs);
+  color: var(--c-gray-2);
+}
+
+.ap-alert__meta--pos {
+  color: var(--c-green);
+  font-weight: 600;
+}
+
+/* --- Processing card --- */
+.ap-alert--proc {
+  background-color: rgba(8, 8, 87, 0.6);
+  border-color: rgba(219, 14, 183, 0.2);
+}
+
+.ap-alert__proc-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--c-accent);
+}
+
+.ap-dots {
+  animation: apDotsPulse 0.9s steps(4, end) infinite;
+  display: inline-block;
+}
+
+@keyframes apDotsPulse {
+  0%, 25%  { opacity: 1; }
+  50%, 75% { opacity: 0.2; }
+  100%     { opacity: 1; }
+}
+
+/* --- Result card --- */
+.ap-alert--result {
+  background-color: rgba(0, 214, 143, 0.05);
+  border-color: rgba(0, 214, 143, 0.2);
+}
+
+.ap-alert__row {
+  display: flex;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+}
+
+.ap-alert__key {
+  color: var(--c-accent);
+  font-weight: 600;
+  min-width: 56px;
+  flex-shrink: 0;
+}
+
+.ap-alert__pos {
+  color: var(--c-green);
+  font-weight: 600;
+}
+
+.ap-alert__val {
+  color: var(--c-gray-1);
+}
+
+/* --- Delivery card --- */
+.ap-alert--delivery {
+  background-color: rgba(219, 14, 183, 0.06);
+  border-color: rgba(219, 14, 183, 0.3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--c-accent);
+  text-align: center;
+}
+
+/* --- Closing card overlay --- */
+.ap-notif-closing {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 20, 0.85);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  animation: apClosingCard 28s ease-in-out infinite;
+}
+
+@keyframes apClosingCard {
+  0%, 78.6%        { opacity: 0; transform: scale(0.94); }
+  85.7%, 91.1%     { opacity: 1; transform: scale(1); }
+  96.4%, 100%      { opacity: 0; transform: scale(0.94); }
+}
+
+.ap-notif-closing__inner {
+  background-color: var(--c-bg-2);
+  border: 1px solid rgba(219, 14, 183, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  text-align: center;
+  box-shadow: 0 0 40px rgba(219, 14, 183, 0.2);
+}
+
+.ap-notif-closing p {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--c-white);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ap-notif-closing p em {
+  font-style: normal;
+  color: var(--c-accent);
+  display: block;
+  font-size: var(--text-base);
+}
+
+/* --- Individual card animations (28s cycle) ---
+   Timings:
+   alert-1  →  5.4%  aparece, 91.1% desaparece
+   alert-2  → 14.3%  aparece, 25%   desaparece  (processing)
+   alert-3  → 25%    aparece, 91.1% desaparece
+   alert-4  → 33.9%  aparece, 91.1% desaparece
+   alert-5  → 44.6%  aparece, 91.1% desaparece
+   alert-6  → 51.8%  aparece, 62.5% desaparece  (processing)
+   alert-7  → 62.5%  aparece, 91.1% desaparece
+   alert-8  → 71.4%  aparece, 91.1% desaparece
+   ---------------------------------------------------------- */
+
+.ap-alert--1 { animation: apAlert1 28s ease-out infinite; }
+@keyframes apAlert1 {
+  0%, 5.4%          { opacity: 0; transform: translateY(10px); }
+  8.9%, 91.1%       { opacity: 1; transform: translateY(0); }
+  95%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--2 { animation: apAlert2 28s ease-out infinite; }
+@keyframes apAlert2 {
+  0%, 14.3%         { opacity: 0; transform: translateY(10px); }
+  17.9%, 21.4%      { opacity: 1; transform: translateY(0); }
+  25%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--3 { animation: apAlert3 28s ease-out infinite; }
+@keyframes apAlert3 {
+  0%, 25%           { opacity: 0; transform: translateY(10px); }
+  28.6%, 91.1%      { opacity: 1; transform: translateY(0); }
+  95%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--4 { animation: apAlert4 28s ease-out infinite; }
+@keyframes apAlert4 {
+  0%, 33.9%         { opacity: 0; transform: translateY(10px); }
+  37.5%, 91.1%      { opacity: 1; transform: translateY(0); }
+  95%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--5 { animation: apAlert5 28s ease-out infinite; }
+@keyframes apAlert5 {
+  0%, 44.6%         { opacity: 0; transform: translateY(10px); }
+  48.2%, 91.1%      { opacity: 1; transform: translateY(0); }
+  95%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--6 { animation: apAlert6 28s ease-out infinite; }
+@keyframes apAlert6 {
+  0%, 51.8%         { opacity: 0; transform: translateY(10px); }
+  55.4%, 58.9%      { opacity: 1; transform: translateY(0); }
+  62.5%, 100%       { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--7 { animation: apAlert7 28s ease-out infinite; }
+@keyframes apAlert7 {
+  0%, 62.5%         { opacity: 0; transform: translateY(10px); }
+  66.1%, 91.1%      { opacity: 1; transform: translateY(0); }
+  95%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+.ap-alert--8 { animation: apAlert8 28s ease-out infinite; }
+@keyframes apAlert8 {
+  0%, 71.4%         { opacity: 0; transform: translateY(10px); }
+  75%, 91.1%        { opacity: 1; transform: translateY(0); }
+  95%, 100%         { opacity: 0; transform: translateY(10px); }
+}
+
+/* --- Responsive hero grid --- */
+@media (max-width: 980px) {
+  .ap-hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .ap-hero .ap-container {
+    text-align: center;
+  }
+
+  .ap-hero__copy {
+    text-align: center;
+  }
+
+  .ap-hero__copy .ap-hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ap-hero__copy .ap-hero__ctas {
+    justify-content: center;
+  }
+
+  .ap-notif-panel {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ap-notif-panel {
+    max-width: 100%;
+  }
+
+  .ap-notif-viewport {
+    height: 260px;
+  }
+}
+
+/* ==========================================================
    14. PAGE TEMPLATE — #aiship-contact (Custom AI Project)
    ========================================================== */
 
@@ -1401,6 +1827,10 @@ a.et_pb_button {
     padding: var(--space-16) 0;
   }
 
+  .ap-container {
+    padding: 0 var(--space-3);
+  }
+
   .ap-hero {
     padding: 5rem 0 4rem;
   }
@@ -1411,6 +1841,11 @@ a.et_pb_button {
 
   .ap-docs-grid {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .ap-doc-item {
+    padding: var(--space-3);
   }
 
   .ap-terminal__body {
@@ -1505,7 +1940,7 @@ a.et_pb_button {
 
 .ap-stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
 
