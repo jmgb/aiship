@@ -2,7 +2,7 @@
 /**
  * Template Name: AIShip — Product
  *
- * Página de producto: SEC Intelligence Analyzer.
+ * Página de producto: Financial Intelligence Engine.
  * Asignar en WordPress → Página "Product" → Atributos → Plantilla.
  */
 
@@ -20,18 +20,18 @@ get_header();
     <div class="ap-container">
 
       <div class="ap-hero__eyebrow">
-        <span class="aiship-badge">SEC Intelligence Analyzer</span>
+        <span class="aiship-badge">Financial Intelligence Engine</span>
       </div>
 
       <h1 class="ap-hero__title">
-        Every filing.<br>
+        Every disclosure.<br>
         <em>Analyzed in seconds.</em>
       </h1>
 
       <p class="ap-hero__sub">
-        Our AI reads every 10-K, 10-Q, 8-K and press release published
-        by US-listed companies — the moment they go live — and turns them
-        into structured investment intelligence.
+        Our AI monitors every SEC filing, press release, earnings call
+        and investor communication from US-listed companies — the moment
+        they go live — turning them into structured investment intelligence.
       </p>
 
       <div class="ap-hero__ctas">
@@ -85,8 +85,8 @@ get_header();
       <div class="ap-stats-grid">
 
         <div class="ap-stat-item" data-aiship-animate>
-          <span class="ap-stat__value aiship-counter" data-target="14000" data-suffix="+">0</span>
-          <span class="ap-stat__label">Filings monitored / day</span>
+          <span class="ap-stat__value aiship-counter" data-target="6000" data-suffix="+">0</span>
+          <span class="ap-stat__label">Listed companies monitored</span>
         </div>
 
         <div class="ap-stat-item ap-stat-item--center" data-aiship-animate>
@@ -95,8 +95,8 @@ get_header();
         </div>
 
         <div class="ap-stat-item" data-aiship-animate>
-          <span class="ap-stat__value">8</span>
-          <span class="ap-stat__label">Document types covered</span>
+          <span class="ap-stat__value">10<span class="ap-stat__unit">+</span></span>
+          <span class="ap-stat__label">Source types monitored</span>
         </div>
 
         <div class="ap-stat-item" data-aiship-animate>
@@ -168,7 +168,7 @@ get_header();
       <div class="ap-section-header">
         <span class="aiship-badge neutral">Coverage</span>
         <h2>What We Monitor</h2>
-        <p>Every official disclosure US-listed companies are required to publish.</p>
+        <p>From SEC filings to earnings calls — we cover the sources that move markets.</p>
       </div>
 
       <div class="ap-docs-grid">
@@ -181,6 +181,9 @@ get_header();
           [ 'code' => 'S-1',     'name' => 'IPO Registration',      'desc' => 'Pre-IPO prospectus & financial history' ],
           [ 'code' => 'DEF 14A', 'name' => 'Proxy Statement',       'desc' => 'Executive compensation & governance' ],
           [ 'code' => 'SC 13D',  'name' => 'Major Shareholder',     'desc' => 'Activist investors & significant positions' ],
+          [ 'code' => 'Form 4',  'name' => 'Insider Transactions',  'desc' => 'Directors & officers buying or selling' ],
+          [ 'code' => '13-F',    'name' => 'Institutional Holdings', 'desc' => 'What the largest funds own each quarter' ],
+          [ 'code' => '20-F',    'name' => 'Foreign Filer Report',   'desc' => 'Non-US companies listed on US exchanges' ],
           [ 'code' => 'PR',      'name' => 'Press Releases',        'desc' => 'Official company announcements' ],
           [ 'code' => 'EC',      'name' => 'Earnings Calls',        'desc' => 'Transcript analysis & tone detection' ],
         ];
@@ -193,6 +196,14 @@ get_header();
             <p class="ap-doc-item__desc"><?php echo esc_html( $doc['desc'] ); ?></p>
           </div>
         <?php endforeach; ?>
+
+        <div class="ap-doc-item ap-doc-item--more">
+          <div class="ap-doc-item__header">
+            <span class="ap-doc-item__code">+</span>
+            <span class="ap-doc-item__name">Custom Sources</span>
+          </div>
+          <p class="ap-doc-item__desc">Need a specific data source? We integrate it.</p>
+        </div>
 
       </div>
 
