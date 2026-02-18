@@ -810,6 +810,7 @@ a.et_pb_button {
 /* --- Layout base --- */
 #aiship-product {
   background-color: var(--c-bg);
+  overflow-x: hidden;
 }
 
 .ap-section {
@@ -1031,6 +1032,7 @@ a.et_pb_button {
   border-radius: var(--radius-md);
   padding: var(--space-6);
   transition: border-color 0.2s ease;
+  min-width: 0;
 }
 
 .ap-doc-item:hover {
@@ -1372,6 +1374,7 @@ a.et_pb_button {
   .ap-pipeline {
     grid-template-columns: 1fr;
     gap: var(--space-2);
+    overflow: visible;
   }
 
   .ap-pipeline__arrow {
