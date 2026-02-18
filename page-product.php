@@ -305,92 +305,92 @@ get_header();
         <div class="ap-phone-btn ap-phone-btn--vol-down"></div>
         <div class="ap-phone-btn ap-phone-btn--power"></div>
 
-        <!-- Keyframe animations (inline, self-contained) -->
+        <!-- Keyframe animations (inline, self-contained) — ciclo 22s -->
         <style>
-          /* Stream scroll — 48s cycle */
+          /* Stream scroll: continuo y rápido */
           @keyframes apPhoneStream {
-            0%, 9%    { transform: translateY(0); }
-            22%       { transform: translateY(0); }
-            42%       { transform: translateY(-30px); }
-            58%       { transform: translateY(-100px); }
-            75%       { transform: translateY(-145px); }
-            82%, 86%  { transform: translateY(-145px); }
-            87%, 100% { transform: translateY(0); }
+            0%, 7%    { transform: translateY(0); }
+            34%       { transform: translateY(0); }
+            43%       { transform: translateY(-25px); }
+            52%       { transform: translateY(-95px); }
+            62%       { transform: translateY(-165px); }
+            72%, 77%  { transform: translateY(-165px); }
+            78%, 100% { transform: translateY(0); }
           }
 
-          /* Monitoring overlay: visible → fade out → snap back */
+          /* Monitoring overlay: visible → fade → snap back */
           @keyframes apMonOverlay {
-            0%, 8%      { opacity: 1; }
-            10%         { opacity: 0; }
-            96%         { opacity: 0; }
-            98%, 100%   { opacity: 1; }
+            0%, 6%      { opacity: 1; }
+            8%          { opacity: 0; }
+            93%         { opacity: 0; }
+            95%, 100%   { opacity: 1; }
           }
 
-          /* Monitoring items: progressive entrance */
+          /* Monitoring items: entrada rápida */
           @keyframes apmFadeIn {
-            0%            { opacity: 0; transform: translateY(6px); }
-            1.5%, 9%      { opacity: 1; transform: translateY(0); }
-            10%, 100%     { opacity: 0; transform: translateY(6px); }
+            0%           { opacity: 0; transform: translateY(6px); }
+            1%, 6%       { opacity: 1; transform: translateY(0); }
+            8%, 100%     { opacity: 0; transform: translateY(6px); }
           }
-          .apm-i1 { animation: apmFadeIn 48s ease-out infinite; }
-          .apm-i2 { animation: apmFadeIn 48s ease-out infinite; animation-delay: 0.5s; }
-          .apm-i3 { animation: apmFadeIn 48s ease-out infinite; animation-delay: 1s; }
+          .apm-i1 { animation: apmFadeIn 22s ease-out infinite; }
+          .apm-i2 { animation: apmFadeIn 22s ease-out infinite; animation-delay: 0.3s; }
+          .apm-i3 { animation: apmFadeIn 22s ease-out infinite; animation-delay: 0.6s; }
 
-          /* Alert messages: individual reveal */
-          .apm-a1 { animation: _apm1 48s ease-out infinite; }
+          /* Alert messages — aparecen rápido, uno tras otro */
+          .apm-a1 { animation: _apm1 22s ease-out infinite; }
           @keyframes _apm1 {
-            0%, 10%      { opacity: 0; transform: translateY(8px); }
-            11.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 8%       { opacity: 0; transform: translateY(8px); }
+            9.5%, 76%    { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a2 { animation: _apm2 48s ease-out infinite; }
+          .apm-a2 { animation: _apm2 22s ease-out infinite; }
           @keyframes _apm2 {
-            0%, 18%      { opacity: 0; transform: translateY(8px); }
-            19.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 14%      { opacity: 0; transform: translateY(8px); }
+            15.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a3 { animation: _apm3 48s ease-out infinite; }
+          .apm-a3 { animation: _apm3 22s ease-out infinite; }
           @keyframes _apm3 {
-            0%, 25%      { opacity: 0; transform: translateY(8px); }
-            26.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 20%      { opacity: 0; transform: translateY(8px); }
+            21.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a4 { animation: _apm4 48s ease-out infinite; }
+          .apm-a4 { animation: _apm4 22s ease-out infinite; }
           @keyframes _apm4 {
-            0%, 32%      { opacity: 0; transform: translateY(8px); }
-            33.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 26%      { opacity: 0; transform: translateY(8px); }
+            27.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a5 { animation: _apm5 48s ease-out infinite; }
+          .apm-a5 { animation: _apm5 22s ease-out infinite; }
           @keyframes _apm5 {
-            0%, 40%      { opacity: 0; transform: translateY(8px); }
-            41.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 33%      { opacity: 0; transform: translateY(8px); }
+            34.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a6 { animation: _apm6 48s ease-out infinite; }
+          .apm-a6 { animation: _apm6 22s ease-out infinite; }
           @keyframes _apm6 {
-            0%, 46%      { opacity: 0; transform: translateY(8px); }
-            47.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 39%      { opacity: 0; transform: translateY(8px); }
+            40.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a7 { animation: _apm7 48s ease-out infinite; }
+          .apm-a7 { animation: _apm7 22s ease-out infinite; }
           @keyframes _apm7 {
-            0%, 54%      { opacity: 0; transform: translateY(8px); }
-            55.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 46%      { opacity: 0; transform: translateY(8px); }
+            47.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a8 { animation: _apm8 48s ease-out infinite; }
+          .apm-a8 { animation: _apm8 22s ease-out infinite; }
           @keyframes _apm8 {
-            0%, 67%      { opacity: 0; transform: translateY(8px); }
-            68.5%, 84%   { opacity: 1; transform: translateY(0); }
-            86%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 55%      { opacity: 0; transform: translateY(8px); }
+            56.5%, 76%   { opacity: 1; transform: translateY(0); }
+            78%, 100%    { opacity: 0; transform: translateY(8px); }
           }
 
           /* Closing card */
           @keyframes apPhoneClosing {
-            0%, 83%      { opacity: 0; transform: scale(0.95); }
-            85%, 96%     { opacity: 1; transform: scale(1); }
-            98%, 100%    { opacity: 0; transform: scale(0.95); }
+            0%, 72%      { opacity: 0; transform: scale(0.95); }
+            74%, 91%     { opacity: 1; transform: scale(1); }
+            93%, 100%    { opacity: 0; transform: scale(0.95); }
           }
 
           /* Dots */
@@ -400,7 +400,7 @@ get_header();
             66%  { opacity: 1;   }
             100% { opacity: 0.3; }
           }
-          .apm-dots { animation: apmDots 1.5s steps(4, end) infinite; }
+          .apm-dots { animation: apmDots 0.9s steps(4, end) infinite; }
         </style>
 
       </div><!-- /ap-phone-wrapper -->

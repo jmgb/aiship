@@ -2120,7 +2120,7 @@ a.et_pb_button {
   z-index: 2;
   background: #000014;
   padding: 14px;
-  animation: apMonOverlay 48s ease-in-out infinite;
+  animation: apMonOverlay 22s ease-in-out infinite;
 }
 .ap-phone-mon-title {
   font-family: var(--font-mono);
@@ -2172,7 +2172,7 @@ a.et_pb_button {
 
 /* --- Alert stream (Layer 2) --- */
 .ap-phone-stream {
-  animation: apPhoneStream 48s linear infinite;
+  animation: apPhoneStream 22s linear infinite;
 }
 .ap-phone-msgs {
   padding: 12px 14px;
@@ -2324,7 +2324,7 @@ a.et_pb_button {
   background: rgba(0, 0, 20, 0.72);
   backdrop-filter: blur(4px);
   opacity: 0;
-  animation: apPhoneClosing 48s ease-in-out infinite;
+  animation: apPhoneClosing 22s ease-in-out infinite;
   pointer-events: none;
 }
 .ap-phone-closing-inner {
