@@ -363,9 +363,9 @@ get_header();
             14%, 100%    { opacity: 0; transform: translateY(6px); }
           }
           .apm-i1 { animation: apmFadeIn 18s ease-out infinite; }
-          .apm-i2 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.3s; }
-          .apm-i3 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.6s; }
-          .apm-i4 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.9s; }
+          .apm-i2 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.4s; }
+          .apm-i3 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.8s; }
+          .apm-i4 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 1.2s; }
 
           /* Alert messages — ~1.4s entre cada uno */
           .apm-a1 { animation: _apm1 18s ease-out infinite; }
