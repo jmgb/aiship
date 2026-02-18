@@ -336,18 +336,18 @@ get_header();
 
         <!-- Keyframe animations (inline, self-contained) — ciclo 28s -->
         <style>
-          /* Stream scroll: empieza antes, muy continuo */
+          /* Stream scroll — calculado px a px para cada card */
           @keyframes apPhoneStream {
             0%, 7%    { transform: translateY(0); }
             20%       { transform: translateY(0); }
             26%       { transform: translateY(-20px); }
-            33%       { transform: translateY(-90px); }
-            39%       { transform: translateY(-140px); }
-            47%       { transform: translateY(-195px); }
-            53%       { transform: translateY(-220px); }
-            60%       { transform: translateY(-270px); }
-            67%       { transform: translateY(-315px); }
-            80%, 85%  { transform: translateY(-315px); }
+            33%       { transform: translateY(-95px); }
+            39%       { transform: translateY(-150px); }
+            47%       { transform: translateY(-210px); }
+            53%       { transform: translateY(-235px); }
+            60%       { transform: translateY(-280px); }
+            67%       { transform: translateY(-335px); }
+            80%, 85%  { transform: translateY(-335px); }
             86%, 100% { transform: translateY(0); }
           }
 
