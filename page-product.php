@@ -334,7 +334,7 @@ get_header();
         <div class="ap-phone-btn ap-phone-btn--vol-down"></div>
         <div class="ap-phone-btn ap-phone-btn--power"></div>
 
-        <!-- Keyframe animations (inline, self-contained) — ciclo 28s -->
+        <!-- Keyframe animations (inline, self-contained) — ciclo 18s -->
         <style>
           /* Stream scroll — velocidad constante, sin paradas */
           @keyframes apPhoneStream {
@@ -357,73 +357,73 @@ get_header();
             1%, 6%       { opacity: 1; transform: translateY(0); }
             8%, 100%     { opacity: 0; transform: translateY(6px); }
           }
-          .apm-i1 { animation: apmFadeIn 28s ease-out infinite; }
-          .apm-i2 { animation: apmFadeIn 28s ease-out infinite; animation-delay: 0.3s; }
-          .apm-i3 { animation: apmFadeIn 28s ease-out infinite; animation-delay: 0.6s; }
+          .apm-i1 { animation: apmFadeIn 18s ease-out infinite; }
+          .apm-i2 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.3s; }
+          .apm-i3 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.6s; }
 
           /* Alert messages — ~1.4s entre cada uno */
-          .apm-a1 { animation: _apm1 28s ease-out infinite; }
+          .apm-a1 { animation: _apm1 18s ease-out infinite; }
           @keyframes _apm1 {
             0%, 8%       { opacity: 0; transform: translateY(8px); }
             9.5%, 85%    { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a2 { animation: _apm2 28s ease-out infinite; }
+          .apm-a2 { animation: _apm2 18s ease-out infinite; }
           @keyframes _apm2 {
             0%, 13%      { opacity: 0; transform: translateY(8px); }
             14.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a3 { animation: _apm3 28s ease-out infinite; }
+          .apm-a3 { animation: _apm3 18s ease-out infinite; }
           @keyframes _apm3 {
             0%, 18%      { opacity: 0; transform: translateY(8px); }
             19.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a4 { animation: _apm4 28s ease-out infinite; }
+          .apm-a4 { animation: _apm4 18s ease-out infinite; }
           @keyframes _apm4 {
             0%, 23%      { opacity: 0; transform: translateY(8px); }
             24.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a5 { animation: _apm5 28s ease-out infinite; }
+          .apm-a5 { animation: _apm5 18s ease-out infinite; }
           @keyframes _apm5 {
             0%, 28%      { opacity: 0; transform: translateY(8px); }
             29.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a6 { animation: _apm6 28s ease-out infinite; }
+          .apm-a6 { animation: _apm6 18s ease-out infinite; }
           @keyframes _apm6 {
             0%, 33%      { opacity: 0; transform: translateY(8px); }
             34.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a7 { animation: _apm7 28s ease-out infinite; }
+          .apm-a7 { animation: _apm7 18s ease-out infinite; }
           @keyframes _apm7 {
             0%, 39%      { opacity: 0; transform: translateY(8px); }
             40.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a8 { animation: _apm8 28s ease-out infinite; }
+          .apm-a8 { animation: _apm8 18s ease-out infinite; }
           @keyframes _apm8 {
             0%, 47%      { opacity: 0; transform: translateY(8px); }
             48.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
           /* FDA case */
-          .apm-a9 { animation: _apm9 28s ease-out infinite; }
+          .apm-a9 { animation: _apm9 18s ease-out infinite; }
           @keyframes _apm9 {
             0%, 52%      { opacity: 0; transform: translateY(8px); }
             53.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a10 { animation: _apm10 28s ease-out infinite; }
+          .apm-a10 { animation: _apm10 18s ease-out infinite; }
           @keyframes _apm10 {
             0%, 58%      { opacity: 0; transform: translateY(8px); }
             59.5%, 85%   { opacity: 1; transform: translateY(0); }
             87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a11 { animation: _apm11 28s ease-out infinite; }
+          .apm-a11 { animation: _apm11 18s ease-out infinite; }
           @keyframes _apm11 {
             0%, 64%      { opacity: 0; transform: translateY(8px); }
             65.5%, 85%   { opacity: 1; transform: translateY(0); }
