@@ -336,18 +336,19 @@ get_header();
 
         <!-- Keyframe animations (inline, self-contained) — ciclo 28s -->
         <style>
-          /* Stream scroll: continuo, cubre los 4 casos de uso */
+          /* Stream scroll: empieza antes, muy continuo */
           @keyframes apPhoneStream {
             0%, 7%    { transform: translateY(0); }
-            32%       { transform: translateY(0); }
-            41%       { transform: translateY(-15px); }
-            50%       { transform: translateY(-85px); }
-            57%       { transform: translateY(-130px); }
-            64%       { transform: translateY(-200px); }
-            70%       { transform: translateY(-245px); }
-            76%       { transform: translateY(-300px); }
-            82%, 86%  { transform: translateY(-300px); }
-            87%, 100% { transform: translateY(0); }
+            20%       { transform: translateY(0); }
+            26%       { transform: translateY(-20px); }
+            33%       { transform: translateY(-90px); }
+            39%       { transform: translateY(-140px); }
+            47%       { transform: translateY(-195px); }
+            53%       { transform: translateY(-220px); }
+            60%       { transform: translateY(-270px); }
+            67%       { transform: translateY(-315px); }
+            80%, 85%  { transform: translateY(-315px); }
+            86%, 100% { transform: translateY(0); }
           }
 
           /* Monitoring overlay: visible → fade → snap back */

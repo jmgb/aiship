@@ -2090,7 +2090,7 @@ a.et_pb_button {
 
 /* --- Viewport (clips scroll) --- */
 .ap-phone-vp {
-  height: 340px;
+  height: 360px;
   overflow: hidden;
   position: relative;
 }
@@ -2100,16 +2100,17 @@ a.et_pb_button {
   position: absolute;
   left: 0;
   right: 0;
-  height: 24px;
   z-index: 5;
   pointer-events: none;
 }
 .ap-phone-vp::before {
   top: 0;
+  height: 20px;
   background: linear-gradient(to bottom, #000014, transparent);
 }
 .ap-phone-vp::after {
   bottom: 0;
+  height: 10px;
   background: linear-gradient(to top, #000014, transparent);
 }
 
