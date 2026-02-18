@@ -336,10 +336,10 @@ get_header();
 
         <!-- Keyframe animations (inline, self-contained) — ciclo 18s -->
         <style>
-          /* Stream scroll — velocidad constante, sin paradas */
+          /* Stream scroll — constante hasta 65%, hold 3.6s mostrando FDA */
           @keyframes apPhoneStream {
             0%, 8%    { transform: translateY(0); }
-            80%, 85%  { transform: translateY(-335px); }
+            65%, 85%  { transform: translateY(-335px); }
             86%, 100% { transform: translateY(0); }
           }
 
