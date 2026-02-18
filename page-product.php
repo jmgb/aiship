@@ -200,7 +200,7 @@ get_header();
 
         <div class="ap-stat-item" data-aiship-animate>
           <span class="ap-stat__value aiship-counter" data-target="1000" data-suffix="+">0</span>
-          <span class="ap-stat__label">Reports &amp; press releases processed daily</span>
+          <span class="ap-stat__label">SEC reports &amp; press releases processed daily</span>
         </div>
 
       </div>
