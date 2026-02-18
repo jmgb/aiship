@@ -190,12 +190,17 @@ get_header();
 
         <div class="ap-stat-item ap-stat-item--center" data-aiship-animate>
           <span class="ap-stat__value">&lt; 5<span class="ap-stat__unit">s</span></span>
-          <span class="ap-stat__label">Average processing time</span>
+          <span class="ap-stat__label">Filing to delivery</span>
         </div>
 
         <div class="ap-stat-item" data-aiship-animate>
           <span class="ap-stat__value">24<span class="ap-stat__unit">/7</span></span>
           <span class="ap-stat__label">Continuous monitoring</span>
+        </div>
+
+        <div class="ap-stat-item" data-aiship-animate>
+          <span class="ap-stat__value aiship-counter" data-target="1000" data-suffix="+">0</span>
+          <span class="ap-stat__label">Reports &amp; press releases processed daily</span>
         </div>
 
       </div>
@@ -212,7 +217,7 @@ get_header();
       <div class="ap-section-header">
         <span class="aiship-badge neutral">Architecture</span>
         <h2>How It Works</h2>
-        <p>Four steps from raw disclosure to actionable intelligence.</p>
+        <p>Five steps from raw disclosure to actionable intelligence.</p>
       </div>
 
       <div class="ap-pipeline">
