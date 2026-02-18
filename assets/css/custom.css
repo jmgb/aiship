@@ -886,7 +886,7 @@ a.et_pb_button {
 }
 
 .ap-hero__title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.75rem, 7vw, 5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.05;
@@ -1279,35 +1279,11 @@ a.et_pb_button {
    15. HERO — NOTIFICATION PANEL ANIMATION
    ========================================================== */
 
-/* --- Hero 2-column grid --- */
-.ap-hero__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
-  align-items: center;
-}
-
-.ap-hero__copy {
-  text-align: left;
-}
-
-.ap-hero__copy .ap-hero__sub {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.ap-hero__copy .ap-hero__ctas {
-  justify-content: flex-start;
-}
-
-.ap-hero__visual {
+/* --- Panel wrapper en How It Works --- */
+.ap-notif-panel-wrapper {
+  margin-top: var(--space-12);
   display: flex;
   justify-content: center;
-}
-
-/* Override centrado del hero cuando hay grid */
-.ap-hero .ap-container {
-  text-align: left;
 }
 
 /* --- Panel container --- */
@@ -1662,35 +1638,7 @@ a.et_pb_button {
   95%, 100%         { opacity: 0; transform: translateY(10px); }
 }
 
-/* --- Responsive hero grid --- */
-@media (max-width: 980px) {
-  .ap-hero__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-12);
-  }
-
-  .ap-hero .ap-container {
-    text-align: center;
-  }
-
-  .ap-hero__copy {
-    text-align: center;
-  }
-
-  .ap-hero__copy .ap-hero__sub {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .ap-hero__copy .ap-hero__ctas {
-    justify-content: center;
-  }
-
-  .ap-notif-panel {
-    max-width: 360px;
-  }
-}
-
+/* --- Responsive panel --- */
 @media (max-width: 767px) {
   .ap-notif-panel {
     max-width: 100%;
