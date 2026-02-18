@@ -106,8 +106,9 @@
       var remaining = Math.max(0, 360 - parseInt(age, 10));
       msg   = '[AIShip Ticker] WP Transient — caché de hace ' + age + ' min (expira en ~' + remaining + ' min)';
       style = 'color: #f39c12; font-weight: bold;';
-    } else if (raw === 'fallback') {
-      msg   = '[AIShip Ticker] Fallback — valores estáticos (Yahoo Finance no respondió)';
+    } else if (raw && raw.indexOf('fallback') === 0) {
+      var detail = raw.indexOf('|') !== -1 ? ' (' + raw.split('|')[1] + ')' : '';
+      msg   = '[AIShip Ticker] Fallback — valores estáticos' + detail;
       style = 'color: #e74c3c; font-weight: bold;';
     } else {
       msg   = '[AIShip Ticker] Fuente desconocida: ' + raw;
