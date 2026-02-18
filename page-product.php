@@ -197,6 +197,11 @@ get_header();
                       <span class="ap-phone-mon-source">Press Release · IR</span>
                       <span class="ap-phone-mon-status">scanning</span>
                     </div>
+                    <div class="ap-phone-mon-item apm-i4">
+                      <span class="ap-phone-mon-ticker">MRNA</span>
+                      <span class="ap-phone-mon-source">FDA · Press Release</span>
+                      <span class="ap-phone-mon-status">scanning</span>
+                    </div>
                     <div class="ap-phone-mon-count">6,000+ companies · 24/7</div>
                   </div>
 
@@ -336,30 +341,31 @@ get_header();
 
         <!-- Keyframe animations (inline, self-contained) — ciclo 18s -->
         <style>
-          /* Stream scroll — constante hasta 65%, hold 3.6s mostrando FDA */
+          /* Stream scroll — 2s overlay + 1s pausa, luego constante, hold FDA */
           @keyframes apPhoneStream {
-            0%, 8%    { transform: translateY(0); }
+            0%, 20%   { transform: translateY(0); }
             65%, 85%  { transform: translateY(-590px); }
             86%, 100% { transform: translateY(0); }
           }
 
-          /* Monitoring overlay: visible → fade → snap back */
+          /* Monitoring overlay: 2s visible → fade 0.5s → snap back */
           @keyframes apMonOverlay {
-            0%, 6%      { opacity: 1; }
-            8%          { opacity: 0; }
+            0%, 11%     { opacity: 1; }
+            14%         { opacity: 0; }
             94%         { opacity: 0; }
             96%, 100%   { opacity: 1; }
           }
 
-          /* Monitoring items: entrada rápida */
+          /* Monitoring items: entrada escalonada */
           @keyframes apmFadeIn {
             0%           { opacity: 0; transform: translateY(6px); }
-            1%, 6%       { opacity: 1; transform: translateY(0); }
-            8%, 100%     { opacity: 0; transform: translateY(6px); }
+            1.5%, 11%    { opacity: 1; transform: translateY(0); }
+            14%, 100%    { opacity: 0; transform: translateY(6px); }
           }
           .apm-i1 { animation: apmFadeIn 18s ease-out infinite; }
           .apm-i2 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.3s; }
           .apm-i3 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.6s; }
+          .apm-i4 { animation: apmFadeIn 18s ease-out infinite; animation-delay: 0.9s; }
 
           /* Alert messages — ~1.4s entre cada uno */
           .apm-a1 { animation: _apm1 18s ease-out infinite; }
