@@ -278,6 +278,35 @@ get_header();
                         📲 Delivered → Telegram · WhatsApp · API
                       </div>
 
+                      <!-- Alert 4: FDA approval — MRNA press release -->
+                      <div class="ap-phone-alert apm-a9">
+                        <div class="ap-phone-alert-top">
+                          <span class="ap-phone-badge ap-phone-badge--fda">FDA</span>
+                          <span class="ap-phone-ticker">MRNA · NASDAQ</span>
+                          <span class="ap-phone-time">10:47 EST</span>
+                        </div>
+                        <div class="ap-phone-alert-title">Drug Approval — Press Release</div>
+                        <div class="ap-phone-alert-sub">mRNA-1283 receives full FDA approval · $18B TAM</div>
+                      </div>
+
+                      <!-- Processing 3 -->
+                      <div class="ap-phone-proc apm-a10">
+                        <span class="ap-phone-proc-icon">🧠</span>
+                        <span class="ap-phone-proc-text">Analyzing<span class="apm-dots">...</span></span>
+                      </div>
+
+                      <!-- Result 3: STRONG BUY -->
+                      <div class="ap-phone-result apm-a11">
+                        <div class="ap-phone-result-row">
+                          <span class="ap-phone-result-key">SIGNAL</span>
+                          <span class="ap-phone-result-pos">STRONG BUY · 0.97</span>
+                        </div>
+                        <div class="ap-phone-result-row">
+                          <span class="ap-phone-result-key">CATALYST</span>
+                          <span class="ap-phone-result-val">First-to-market · monopoly 7yr · TAM $18B</span>
+                        </div>
+                      </div>
+
                     </div>
                   </div><!-- /ap-phone-stream -->
 
@@ -288,7 +317,7 @@ get_header();
               <!-- Closing card overlay -->
               <div class="ap-phone-closing">
                 <div class="ap-phone-closing-inner">
-                  <p>3 signals processed<br><em>&lt; 5 seconds each</em></p>
+                  <p>4 signals processed<br><em>&lt; 5 seconds each</em></p>
                 </div>
               </div>
 
@@ -305,25 +334,28 @@ get_header();
         <div class="ap-phone-btn ap-phone-btn--vol-down"></div>
         <div class="ap-phone-btn ap-phone-btn--power"></div>
 
-        <!-- Keyframe animations (inline, self-contained) — ciclo 22s -->
+        <!-- Keyframe animations (inline, self-contained) — ciclo 28s -->
         <style>
-          /* Stream scroll: continuo y rápido */
+          /* Stream scroll: continuo, cubre los 4 casos de uso */
           @keyframes apPhoneStream {
             0%, 7%    { transform: translateY(0); }
-            34%       { transform: translateY(0); }
-            43%       { transform: translateY(-25px); }
-            52%       { transform: translateY(-95px); }
-            62%       { transform: translateY(-165px); }
-            72%, 77%  { transform: translateY(-165px); }
-            78%, 100% { transform: translateY(0); }
+            32%       { transform: translateY(0); }
+            41%       { transform: translateY(-15px); }
+            50%       { transform: translateY(-85px); }
+            57%       { transform: translateY(-130px); }
+            64%       { transform: translateY(-200px); }
+            70%       { transform: translateY(-245px); }
+            76%       { transform: translateY(-300px); }
+            82%, 86%  { transform: translateY(-300px); }
+            87%, 100% { transform: translateY(0); }
           }
 
           /* Monitoring overlay: visible → fade → snap back */
           @keyframes apMonOverlay {
             0%, 6%      { opacity: 1; }
             8%          { opacity: 0; }
-            93%         { opacity: 0; }
-            95%, 100%   { opacity: 1; }
+            94%         { opacity: 0; }
+            96%, 100%   { opacity: 1; }
           }
 
           /* Monitoring items: entrada rápida */
@@ -332,65 +364,84 @@ get_header();
             1%, 6%       { opacity: 1; transform: translateY(0); }
             8%, 100%     { opacity: 0; transform: translateY(6px); }
           }
-          .apm-i1 { animation: apmFadeIn 22s ease-out infinite; }
-          .apm-i2 { animation: apmFadeIn 22s ease-out infinite; animation-delay: 0.3s; }
-          .apm-i3 { animation: apmFadeIn 22s ease-out infinite; animation-delay: 0.6s; }
+          .apm-i1 { animation: apmFadeIn 28s ease-out infinite; }
+          .apm-i2 { animation: apmFadeIn 28s ease-out infinite; animation-delay: 0.3s; }
+          .apm-i3 { animation: apmFadeIn 28s ease-out infinite; animation-delay: 0.6s; }
 
-          /* Alert messages — aparecen rápido, uno tras otro */
-          .apm-a1 { animation: _apm1 22s ease-out infinite; }
+          /* Alert messages — ~1.4s entre cada uno */
+          .apm-a1 { animation: _apm1 28s ease-out infinite; }
           @keyframes _apm1 {
             0%, 8%       { opacity: 0; transform: translateY(8px); }
-            9.5%, 76%    { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            9.5%, 85%    { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a2 { animation: _apm2 22s ease-out infinite; }
+          .apm-a2 { animation: _apm2 28s ease-out infinite; }
           @keyframes _apm2 {
-            0%, 14%      { opacity: 0; transform: translateY(8px); }
-            15.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 13%      { opacity: 0; transform: translateY(8px); }
+            14.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a3 { animation: _apm3 22s ease-out infinite; }
+          .apm-a3 { animation: _apm3 28s ease-out infinite; }
           @keyframes _apm3 {
-            0%, 20%      { opacity: 0; transform: translateY(8px); }
-            21.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 18%      { opacity: 0; transform: translateY(8px); }
+            19.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a4 { animation: _apm4 22s ease-out infinite; }
+          .apm-a4 { animation: _apm4 28s ease-out infinite; }
           @keyframes _apm4 {
-            0%, 26%      { opacity: 0; transform: translateY(8px); }
-            27.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 23%      { opacity: 0; transform: translateY(8px); }
+            24.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a5 { animation: _apm5 22s ease-out infinite; }
+          .apm-a5 { animation: _apm5 28s ease-out infinite; }
           @keyframes _apm5 {
-            0%, 33%      { opacity: 0; transform: translateY(8px); }
-            34.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 28%      { opacity: 0; transform: translateY(8px); }
+            29.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a6 { animation: _apm6 22s ease-out infinite; }
+          .apm-a6 { animation: _apm6 28s ease-out infinite; }
           @keyframes _apm6 {
-            0%, 39%      { opacity: 0; transform: translateY(8px); }
-            40.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 33%      { opacity: 0; transform: translateY(8px); }
+            34.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a7 { animation: _apm7 22s ease-out infinite; }
+          .apm-a7 { animation: _apm7 28s ease-out infinite; }
           @keyframes _apm7 {
-            0%, 46%      { opacity: 0; transform: translateY(8px); }
-            47.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 39%      { opacity: 0; transform: translateY(8px); }
+            40.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
-          .apm-a8 { animation: _apm8 22s ease-out infinite; }
+          .apm-a8 { animation: _apm8 28s ease-out infinite; }
           @keyframes _apm8 {
-            0%, 55%      { opacity: 0; transform: translateY(8px); }
-            56.5%, 76%   { opacity: 1; transform: translateY(0); }
-            78%, 100%    { opacity: 0; transform: translateY(8px); }
+            0%, 47%      { opacity: 0; transform: translateY(8px); }
+            48.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          /* FDA case */
+          .apm-a9 { animation: _apm9 28s ease-out infinite; }
+          @keyframes _apm9 {
+            0%, 52%      { opacity: 0; transform: translateY(8px); }
+            53.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a10 { animation: _apm10 28s ease-out infinite; }
+          @keyframes _apm10 {
+            0%, 58%      { opacity: 0; transform: translateY(8px); }
+            59.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a11 { animation: _apm11 28s ease-out infinite; }
+          @keyframes _apm11 {
+            0%, 64%      { opacity: 0; transform: translateY(8px); }
+            65.5%, 85%   { opacity: 1; transform: translateY(0); }
+            87%, 100%    { opacity: 0; transform: translateY(8px); }
           }
 
           /* Closing card */
           @keyframes apPhoneClosing {
-            0%, 72%      { opacity: 0; transform: scale(0.95); }
-            74%, 91%     { opacity: 1; transform: scale(1); }
-            93%, 100%    { opacity: 0; transform: scale(0.95); }
+            0%, 82%      { opacity: 0; transform: scale(0.95); }
+            84%, 93%     { opacity: 1; transform: scale(1); }
+            95%, 100%    { opacity: 0; transform: scale(0.95); }
           }
 
           /* Dots */
