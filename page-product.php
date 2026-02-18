@@ -150,97 +150,260 @@ get_header();
 
       </div>
 
-      <!-- Live feed demo -->
-      <div class="ap-notif-panel-wrapper" data-aiship-animate>
-        <div class="ap-notif-panel">
+      <!-- Phone mockup — iPhone 15 style, notificaciones SEC animadas -->
+      <div class="ap-phone-wrapper" data-aiship-animate>
 
-          <div class="ap-notif-panel__bar">
-            <div class="ap-notif-panel__dots">
-              <span class="ap-notif-panel__dot ap-notif-panel__dot--r"></span>
-              <span class="ap-notif-panel__dot ap-notif-panel__dot--y"></span>
-              <span class="ap-notif-panel__dot ap-notif-panel__dot--g"></span>
-            </div>
-            <span class="ap-notif-panel__title">aiship_engine · live_feed</span>
-            <span class="ap-notif-panel__live">● LIVE</span>
-          </div>
+        <!-- Outer frame (titanium gradient) -->
+        <div class="ap-phone-frame">
+          <!-- Inner bezel -->
+          <div class="ap-phone-bezel">
+            <!-- Screen -->
+            <div class="ap-phone-screen">
 
-          <div class="ap-notif-viewport">
-
-            <div class="ap-notif-feed">
-
-              <!-- Alert 1: 8-K NVDA -->
-              <div class="ap-alert ap-alert--1">
-                <div class="ap-alert__source">
-                  <span class="ap-alert__badge">8-K</span>
-                  <span class="ap-alert__ticker">NVDA · NASDAQ</span>
-                  <span class="ap-alert__time">08:31 EST</span>
+              <!-- Dynamic Island -->
+              <div class="ap-phone-di-wrap">
+                <div class="ap-phone-di">
+                  <div class="ap-phone-di-cam"></div>
                 </div>
-                <div class="ap-alert__title">Material Event detected</div>
-                <div class="ap-alert__meta">Revenue guidance raised · CEO commentary</div>
               </div>
 
-              <!-- Processing 1 -->
-              <div class="ap-alert ap-alert--proc ap-alert--2">
-                <span class="ap-alert__proc-text">🧠 Analyzing<span class="ap-dots">...</span></span>
-              </div>
+              <!-- App content (below Dynamic Island) -->
+              <div class="ap-phone-app">
 
-              <!-- Result 1 -->
-              <div class="ap-alert ap-alert--result ap-alert--3">
-                <div class="ap-alert__row"><span class="ap-alert__key">SIGNAL</span><span class="ap-alert__pos">BULLISH · 0.89</span></div>
-                <div class="ap-alert__row"><span class="ap-alert__key">SUMMARY</span><span class="ap-alert__val">Guidance +22% · EPS beat $4.28 vs $3.91</span></div>
-              </div>
-
-              <!-- Alert 2: Form 4 AAPL -->
-              <div class="ap-alert ap-alert--4">
-                <div class="ap-alert__source">
-                  <span class="ap-alert__badge ap-alert__badge--insider">Form 4</span>
-                  <span class="ap-alert__ticker">AAPL · CEO</span>
-                  <span class="ap-alert__time">09:14 EST</span>
+                <!-- Fixed app header -->
+                <div class="ap-phone-app-bar">
+                  <span class="ap-phone-app-title">aiship · live_alerts</span>
+                  <span class="ap-phone-app-live">● LIVE</span>
                 </div>
-                <div class="ap-alert__title">Insider Buy</div>
-                <div class="ap-alert__meta ap-alert__meta--pos">+285,000 shares · $62.1M</div>
-              </div>
 
-              <!-- Alert 3: PR JPM -->
-              <div class="ap-alert ap-alert--5">
-                <div class="ap-alert__source">
-                  <span class="ap-alert__badge ap-alert__badge--pr">PR</span>
-                  <span class="ap-alert__ticker">JPM · NYSE</span>
-                  <span class="ap-alert__time">07:05 EST</span>
+                <!-- Viewport — clips the animated stream -->
+                <div class="ap-phone-vp">
+
+                  <!-- Layer 1: Monitoring overlay (visible at start) -->
+                  <div class="ap-phone-monitoring">
+                    <div class="ap-phone-mon-title">📡 Monitoring now</div>
+                    <div class="ap-phone-mon-item apm-i1">
+                      <span class="ap-phone-mon-ticker">NVDA</span>
+                      <span class="ap-phone-mon-source">SEC EDGAR · 8-K</span>
+                      <span class="ap-phone-mon-status">scanning</span>
+                    </div>
+                    <div class="ap-phone-mon-item apm-i2">
+                      <span class="ap-phone-mon-ticker">AAPL</span>
+                      <span class="ap-phone-mon-source">Form 4 · Insider</span>
+                      <span class="ap-phone-mon-status">scanning</span>
+                    </div>
+                    <div class="ap-phone-mon-item apm-i3">
+                      <span class="ap-phone-mon-ticker">JPM</span>
+                      <span class="ap-phone-mon-source">Press Release · IR</span>
+                      <span class="ap-phone-mon-status">scanning</span>
+                    </div>
+                    <div class="ap-phone-mon-count">6,000+ companies · 24/7</div>
+                  </div>
+
+                  <!-- Layer 2: Alert stream (auto-scrolls) -->
+                  <div class="ap-phone-stream">
+                    <div class="ap-phone-msgs">
+
+                      <!-- Alert 1: 8-K NVDA -->
+                      <div class="ap-phone-alert apm-a1">
+                        <div class="ap-phone-alert-top">
+                          <span class="ap-phone-badge">8-K</span>
+                          <span class="ap-phone-ticker">NVDA · NASDAQ</span>
+                          <span class="ap-phone-time">08:31 EST</span>
+                        </div>
+                        <div class="ap-phone-alert-title">Material Event detected</div>
+                        <div class="ap-phone-alert-sub">Revenue guidance raised · CEO commentary</div>
+                      </div>
+
+                      <!-- Processing 1 -->
+                      <div class="ap-phone-proc apm-a2">
+                        <span class="ap-phone-proc-icon">🧠</span>
+                        <span class="ap-phone-proc-text">Analyzing<span class="apm-dots">...</span></span>
+                      </div>
+
+                      <!-- Result 1 -->
+                      <div class="ap-phone-result apm-a3">
+                        <div class="ap-phone-result-row">
+                          <span class="ap-phone-result-key">SIGNAL</span>
+                          <span class="ap-phone-result-pos">BULLISH · 0.89</span>
+                        </div>
+                        <div class="ap-phone-result-row">
+                          <span class="ap-phone-result-key">EPS</span>
+                          <span class="ap-phone-result-val">Beat $4.28 vs $3.91 · +22% guidance</span>
+                        </div>
+                      </div>
+
+                      <!-- Alert 2: Form 4 AAPL -->
+                      <div class="ap-phone-alert apm-a4">
+                        <div class="ap-phone-alert-top">
+                          <span class="ap-phone-badge ap-phone-badge--insider">Form 4</span>
+                          <span class="ap-phone-ticker">AAPL · CEO</span>
+                          <span class="ap-phone-time">09:14 EST</span>
+                        </div>
+                        <div class="ap-phone-alert-title">Insider Buy</div>
+                        <div class="ap-phone-alert-sub ap-phone-alert-sub--pos">+285,000 shares · $62.1M</div>
+                      </div>
+
+                      <!-- Processing 2 -->
+                      <div class="ap-phone-proc apm-a5">
+                        <span class="ap-phone-proc-icon">🧠</span>
+                        <span class="ap-phone-proc-text">Analyzing<span class="apm-dots">...</span></span>
+                      </div>
+
+                      <!-- Result 2 -->
+                      <div class="ap-phone-result apm-a6">
+                        <div class="ap-phone-result-row">
+                          <span class="ap-phone-result-key">SIGNAL</span>
+                          <span class="ap-phone-result-pos">BULLISH · 0.91</span>
+                        </div>
+                        <div class="ap-phone-result-row">
+                          <span class="ap-phone-result-key">ACTION</span>
+                          <span class="ap-phone-result-val">Review LONG · Initiate position</span>
+                        </div>
+                      </div>
+
+                      <!-- Alert 3: PR JPM -->
+                      <div class="ap-phone-alert apm-a7">
+                        <div class="ap-phone-alert-top">
+                          <span class="ap-phone-badge ap-phone-badge--pr">PR</span>
+                          <span class="ap-phone-ticker">JPM · NYSE</span>
+                          <span class="ap-phone-time">07:05 EST</span>
+                        </div>
+                        <div class="ap-phone-alert-title">Q4 Earnings Beat</div>
+                        <div class="ap-phone-alert-sub">EPS $4.81 vs $4.11 · Net income +18% YoY</div>
+                      </div>
+
+                      <!-- Delivery -->
+                      <div class="ap-phone-delivery apm-a8">
+                        📲 Delivered → Telegram · WhatsApp · API
+                      </div>
+
+                    </div>
+                  </div><!-- /ap-phone-stream -->
+
+                </div><!-- /ap-phone-vp -->
+
+              </div><!-- /ap-phone-app -->
+
+              <!-- Closing card overlay -->
+              <div class="ap-phone-closing">
+                <div class="ap-phone-closing-inner">
+                  <p>3 signals processed<br><em>&lt; 5 seconds each</em></p>
                 </div>
-                <div class="ap-alert__title">Q4 Earnings Beat</div>
-                <div class="ap-alert__meta">EPS $4.81 vs $4.11 est. · Net income +18% YoY</div>
               </div>
 
-              <!-- Processing 2 -->
-              <div class="ap-alert ap-alert--proc ap-alert--6">
-                <span class="ap-alert__proc-text">🧠 Analyzing<span class="ap-dots">...</span></span>
-              </div>
+              <!-- Home indicator -->
+              <div class="ap-phone-home-bar"></div>
 
-              <!-- Result 2 -->
-              <div class="ap-alert ap-alert--result ap-alert--7">
-                <div class="ap-alert__row"><span class="ap-alert__key">SIGNAL</span><span class="ap-alert__pos">BULLISH · 0.91</span></div>
-                <div class="ap-alert__row"><span class="ap-alert__key">ACTION</span><span class="ap-alert__val">Review LONG · Initiate position</span></div>
-              </div>
+            </div><!-- /ap-phone-screen -->
+          </div><!-- /ap-phone-bezel -->
+        </div><!-- /ap-phone-frame -->
 
-              <!-- Delivery -->
-              <div class="ap-alert ap-alert--delivery ap-alert--8">
-                📲 Delivered → Telegram · WhatsApp · API
-              </div>
+        <!-- Physical buttons -->
+        <div class="ap-phone-btn ap-phone-btn--silent"></div>
+        <div class="ap-phone-btn ap-phone-btn--vol-up"></div>
+        <div class="ap-phone-btn ap-phone-btn--vol-down"></div>
+        <div class="ap-phone-btn ap-phone-btn--power"></div>
 
-            </div>
+        <!-- Keyframe animations (inline, self-contained) -->
+        <style>
+          /* Stream scroll — 48s cycle */
+          @keyframes apPhoneStream {
+            0%, 9%    { transform: translateY(0); }
+            22%       { transform: translateY(0); }
+            42%       { transform: translateY(-30px); }
+            58%       { transform: translateY(-100px); }
+            75%       { transform: translateY(-145px); }
+            82%, 86%  { transform: translateY(-145px); }
+            87%, 100% { transform: translateY(0); }
+          }
 
-            <!-- Closing card -->
-            <div class="ap-notif-closing">
-              <div class="ap-notif-closing__inner">
-                <p>3 signals processed<br><em>&lt; 5 seconds each</em></p>
-              </div>
-            </div>
+          /* Monitoring overlay: visible → fade out → snap back */
+          @keyframes apMonOverlay {
+            0%, 8%      { opacity: 1; }
+            10%         { opacity: 0; }
+            96%         { opacity: 0; }
+            98%, 100%   { opacity: 1; }
+          }
 
-          </div>
+          /* Monitoring items: progressive entrance */
+          @keyframes apmFadeIn {
+            0%            { opacity: 0; transform: translateY(6px); }
+            1.5%, 9%      { opacity: 1; transform: translateY(0); }
+            10%, 100%     { opacity: 0; transform: translateY(6px); }
+          }
+          .apm-i1 { animation: apmFadeIn 48s ease-out infinite; }
+          .apm-i2 { animation: apmFadeIn 48s ease-out infinite; animation-delay: 0.5s; }
+          .apm-i3 { animation: apmFadeIn 48s ease-out infinite; animation-delay: 1s; }
 
-        </div>
-      </div>
+          /* Alert messages: individual reveal */
+          .apm-a1 { animation: _apm1 48s ease-out infinite; }
+          @keyframes _apm1 {
+            0%, 10%      { opacity: 0; transform: translateY(8px); }
+            11.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a2 { animation: _apm2 48s ease-out infinite; }
+          @keyframes _apm2 {
+            0%, 18%      { opacity: 0; transform: translateY(8px); }
+            19.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a3 { animation: _apm3 48s ease-out infinite; }
+          @keyframes _apm3 {
+            0%, 25%      { opacity: 0; transform: translateY(8px); }
+            26.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a4 { animation: _apm4 48s ease-out infinite; }
+          @keyframes _apm4 {
+            0%, 32%      { opacity: 0; transform: translateY(8px); }
+            33.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a5 { animation: _apm5 48s ease-out infinite; }
+          @keyframes _apm5 {
+            0%, 40%      { opacity: 0; transform: translateY(8px); }
+            41.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a6 { animation: _apm6 48s ease-out infinite; }
+          @keyframes _apm6 {
+            0%, 46%      { opacity: 0; transform: translateY(8px); }
+            47.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a7 { animation: _apm7 48s ease-out infinite; }
+          @keyframes _apm7 {
+            0%, 54%      { opacity: 0; transform: translateY(8px); }
+            55.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+          .apm-a8 { animation: _apm8 48s ease-out infinite; }
+          @keyframes _apm8 {
+            0%, 67%      { opacity: 0; transform: translateY(8px); }
+            68.5%, 84%   { opacity: 1; transform: translateY(0); }
+            86%, 100%    { opacity: 0; transform: translateY(8px); }
+          }
+
+          /* Closing card */
+          @keyframes apPhoneClosing {
+            0%, 83%      { opacity: 0; transform: scale(0.95); }
+            85%, 96%     { opacity: 1; transform: scale(1); }
+            98%, 100%    { opacity: 0; transform: scale(0.95); }
+          }
+
+          /* Dots */
+          @keyframes apmDots {
+            0%   { opacity: 0.3; }
+            33%  { opacity: 0.6; }
+            66%  { opacity: 1;   }
+            100% { opacity: 0.3; }
+          }
+          .apm-dots { animation: apmDots 1.5s steps(4, end) infinite; }
+        </style>
+
+      </div><!-- /ap-phone-wrapper -->
 
     </div>
   </section>

@@ -1993,3 +1993,410 @@ a.et_pb_button {
     display: none; /* Ocultar en móvil muy pequeño */
   }
 }
+
+
+/* =============================================================
+   PHONE MOCKUP — How It Works section
+   iPhone 15 style, dark (navy) screen, AIShip SEC alerts
+   ============================================================= */
+
+/* --- Wrapper centrado --- */
+.ap-phone-wrapper {
+  position: relative;
+  width: 300px;
+  margin: var(--space-12) auto 0;
+}
+
+/* --- Outer frame: titanium gradient --- */
+.ap-phone-frame {
+  background: linear-gradient(to bottom, #5a5a5e, #2d2d30);
+  border-radius: 3rem;
+  padding: 3px;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 60px rgba(219, 14, 183, 0.06);
+}
+
+/* --- Inner bezel --- */
+.ap-phone-bezel {
+  background: #1c1c1e;
+  border-radius: 2.85rem;
+  padding: 6px;
+}
+
+/* --- Screen area --- */
+.ap-phone-screen {
+  background: #000014;
+  border-radius: 2.5rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 520px;
+}
+
+/* --- Dynamic Island --- */
+.ap-phone-di-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+}
+.ap-phone-di {
+  width: 100px;
+  height: 32px;
+  background: #000;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.ap-phone-di-cam {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1.5px solid #333;
+}
+
+/* --- App content area (below DI) --- */
+.ap-phone-app {
+  padding-top: 56px;
+}
+
+/* --- App header bar --- */
+.ap-phone-app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ap-phone-app-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+}
+.ap-phone-app-live {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-green);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* --- Viewport (clips scroll) --- */
+.ap-phone-vp {
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+.ap-phone-vp::before,
+.ap-phone-vp::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24px;
+  z-index: 5;
+  pointer-events: none;
+}
+.ap-phone-vp::before {
+  top: 0;
+  background: linear-gradient(to bottom, #000014, transparent);
+}
+.ap-phone-vp::after {
+  bottom: 0;
+  background: linear-gradient(to top, #000014, transparent);
+}
+
+/* --- Monitoring overlay (Layer 1) --- */
+.ap-phone-monitoring {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #000014;
+  padding: 14px;
+  animation: apMonOverlay 48s ease-in-out infinite;
+}
+.ap-phone-mon-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.ap-phone-mon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+}
+.ap-phone-mon-ticker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+.ap-phone-mon-source {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+  flex: 1;
+}
+.ap-phone-mon-status {
+  font-size: 8px;
+  color: var(--c-accent);
+  animation: apmBlink 1.2s ease-in-out infinite;
+}
+@keyframes apmBlink {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+.ap-phone-mon-count {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* --- Alert stream (Layer 2) --- */
+.ap-phone-stream {
+  animation: apPhoneStream 48s linear infinite;
+}
+.ap-phone-msgs {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Base alert card */
+.ap-phone-alert {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  opacity: 0;
+  transform: translateY(8px);
+  flex-shrink: 0;
+}
+.ap-phone-alert-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+/* Badges */
+.ap-phone-badge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(219, 14, 183, 0.2);
+  color: var(--c-accent);
+  border: 1px solid rgba(219, 14, 183, 0.3);
+}
+.ap-phone-badge--insider {
+  background: rgba(255, 160, 0, 0.15);
+  color: #ffa500;
+  border-color: rgba(255, 160, 0, 0.3);
+}
+.ap-phone-badge--pr {
+  background: rgba(70, 200, 255, 0.15);
+  color: #46c8ff;
+  border-color: rgba(70, 200, 255, 0.3);
+}
+
+.ap-phone-ticker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+.ap-phone-time {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.25);
+}
+.ap-phone-alert-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.ap-phone-alert-sub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.38);
+}
+.ap-phone-alert-sub--pos {
+  color: var(--c-green);
+}
+
+/* Processing card */
+.ap-phone-proc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(219, 14, 183, 0.06);
+  border: 1px solid rgba(219, 14, 183, 0.15);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  flex-shrink: 0;
+}
+.ap-phone-proc-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-accent);
+}
+
+/* Result card */
+.ap-phone-result {
+  background: rgba(0, 255, 140, 0.05);
+  border: 1px solid rgba(0, 255, 140, 0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+  opacity: 0;
+  transform: translateY(8px);
+  flex-shrink: 0;
+}
+.ap-phone-result-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+.ap-phone-result-key {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.28);
+  min-width: 44px;
+  flex-shrink: 0;
+}
+.ap-phone-result-pos {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--c-green);
+}
+.ap-phone-result-val {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Delivery pill */
+.ap-phone-delivery {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--c-accent);
+  text-align: center;
+  padding: 8px 12px;
+  background: rgba(219, 14, 183, 0.05);
+  border: 1px solid rgba(219, 14, 183, 0.12);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  flex-shrink: 0;
+}
+
+/* --- Closing card overlay --- */
+.ap-phone-closing {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 20, 0.72);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  animation: apPhoneClosing 48s ease-in-out infinite;
+  pointer-events: none;
+}
+.ap-phone-closing-inner {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(219, 14, 183, 0.35);
+  border-radius: 16px;
+  padding: 20px 28px;
+  text-align: center;
+}
+.ap-phone-closing-inner p {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.65;
+  margin: 0;
+}
+.ap-phone-closing-inner em {
+  color: var(--c-accent);
+  font-style: normal;
+}
+
+/* --- Home indicator bar --- */
+.ap-phone-home-bar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+/* --- Physical side buttons --- */
+.ap-phone-btn {
+  position: absolute;
+  background: linear-gradient(to right, #3a3a3c, #5a5a5e);
+  border-radius: 2px;
+}
+.ap-phone-btn--silent {
+  left: -3px;
+  top: 90px;
+  width: 3px;
+  height: 24px;
+  border-radius: 2px 0 0 2px;
+}
+.ap-phone-btn--vol-up {
+  left: -3px;
+  top: 130px;
+  width: 3px;
+  height: 40px;
+  border-radius: 2px 0 0 2px;
+}
+.ap-phone-btn--vol-down {
+  left: -3px;
+  top: 185px;
+  width: 3px;
+  height: 40px;
+  border-radius: 2px 0 0 2px;
+}
+.ap-phone-btn--power {
+  right: -3px;
+  top: 150px;
+  width: 3px;
+  height: 56px;
+  border-radius: 0 2px 2px 0;
+  background: linear-gradient(to left, #3a3a3c, #5a5a5e);
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .ap-phone-wrapper {
+    width: 260px;
+  }
+}
