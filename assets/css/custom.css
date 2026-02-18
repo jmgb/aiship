@@ -1401,6 +1401,10 @@ a.et_pb_button {
     padding: var(--space-16) 0;
   }
 
+  .ap-container {
+    padding: 0 var(--space-4);
+  }
+
   .ap-hero {
     padding: 5rem 0 4rem;
   }
@@ -1411,6 +1415,11 @@ a.et_pb_button {
 
   .ap-docs-grid {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .ap-doc-item {
+    padding: var(--space-4);
   }
 
   .ap-terminal__body {
