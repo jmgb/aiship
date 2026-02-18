@@ -1402,7 +1402,7 @@ a.et_pb_button {
   }
 
   .ap-container {
-    padding: 0 var(--space-4);
+    padding: 0 var(--space-3);
   }
 
   .ap-hero {
@@ -1419,7 +1419,7 @@ a.et_pb_button {
   }
 
   .ap-doc-item {
-    padding: var(--space-4);
+    padding: var(--space-3);
   }
 
   .ap-terminal__body {
