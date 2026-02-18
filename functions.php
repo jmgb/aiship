@@ -48,7 +48,9 @@ add_action( 'wp_enqueue_scripts', function () {
 function aiship_get_tickers() {
     $cached = get_transient( 'aiship_tickers' );
     if ( $cached !== false ) {
-        return $cached;
+        $age_min = isset( $cached['at'] ) ? round( ( time() - $cached['at'] ) / 60 ) : '?';
+        $GLOBALS['aiship_ticker_source'] = 'cache|' . $age_min;
+        return $cached['tickers'] ?? $cached; // compatibilidad con formato anterior
     }
 
     // Yahoo Finance acepta múltiples símbolos en una sola petición (sin API key)
@@ -63,6 +65,7 @@ function aiship_get_tickers() {
     ] );
 
     if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
+        $GLOBALS['aiship_ticker_source'] = 'fallback';
         return aiship_tickers_fallback();
     }
 
@@ -70,6 +73,7 @@ function aiship_get_tickers() {
     $results = $body['quoteResponse']['result'] ?? [];
 
     if ( empty( $results ) ) {
+        $GLOBALS['aiship_ticker_source'] = 'fallback';
         return aiship_tickers_fallback();
     }
 
@@ -89,10 +93,12 @@ function aiship_get_tickers() {
     }
 
     if ( empty( $tickers ) ) {
+        $GLOBALS['aiship_ticker_source'] = 'fallback';
         return aiship_tickers_fallback();
     }
 
-    set_transient( 'aiship_tickers', $tickers, 6 * HOUR_IN_SECONDS );
+    set_transient( 'aiship_tickers', [ 'tickers' => $tickers, 'at' => time() ], 6 * HOUR_IN_SECONDS );
+    $GLOBALS['aiship_ticker_source'] = 'api';
     return $tickers;
 }
 

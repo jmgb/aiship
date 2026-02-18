@@ -46,10 +46,10 @@ get_header();
   <!-- =========================================================
        TICKER — barra de tickers bursátiles animada
        ========================================================= -->
-  <div class="ap-ticker-bar" aria-hidden="true">
+  <?php $tickers = aiship_get_tickers(); ?>
+  <div class="ap-ticker-bar" aria-hidden="true" data-ticker-source="<?php echo esc_attr( $GLOBALS['aiship_ticker_source'] ?? 'unknown' ); ?>">
     <div class="ap-ticker-track">
       <?php
-      $tickers = aiship_get_tickers();
       // Duplicamos para loop continuo
       $all = array_merge( $tickers, $tickers );
       foreach ( $all as $t ) :

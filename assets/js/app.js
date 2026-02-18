@@ -89,12 +89,42 @@
   }
 
   /* ----------------------------------------------------------
-     4. INIT
+     4. TICKER SOURCE LOG — muestra en consola el origen de los datos
+     ---------------------------------------------------------- */
+  function logTickerSource() {
+    var bar = document.querySelector('.ap-ticker-bar[data-ticker-source]');
+    if (!bar) return;
+
+    var raw = bar.getAttribute('data-ticker-source');
+    var msg, style;
+
+    if (raw === 'api') {
+      msg   = '[AIShip Ticker] Yahoo Finance API — datos frescos (caché renovada 6h)';
+      style = 'color: #2ecc71; font-weight: bold;';
+    } else if (raw && raw.indexOf('cache|') === 0) {
+      var age = raw.split('|')[1];
+      var remaining = Math.max(0, 360 - parseInt(age, 10));
+      msg   = '[AIShip Ticker] WP Transient — caché de hace ' + age + ' min (expira en ~' + remaining + ' min)';
+      style = 'color: #f39c12; font-weight: bold;';
+    } else if (raw === 'fallback') {
+      msg   = '[AIShip Ticker] Fallback — valores estáticos (Yahoo Finance no respondió)';
+      style = 'color: #e74c3c; font-weight: bold;';
+    } else {
+      msg   = '[AIShip Ticker] Fuente desconocida: ' + raw;
+      style = 'color: #999;';
+    }
+
+    console.log('%c' + msg, style);
+  }
+
+  /* ----------------------------------------------------------
+     5. INIT
      ---------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initHeaderScroll();
     initCounters();
+    logTickerSource();
   });
 
 })();
