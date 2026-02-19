@@ -116,7 +116,7 @@ get_header();
           <div class="ap-pipeline__sub">SEC EDGAR · NASDAQ · FINRA · Press Releases · IR Pages</div>
         </div>
 
-        <div class="ap-pipeline__arrow">→</div>
+        <div class="ap-pipeline__arrow"></div>
 
         <div class="ap-pipeline__node">
           <div class="ap-pipeline__icon">⚡</div>
@@ -124,7 +124,7 @@ get_header();
           <div class="ap-pipeline__sub">Monitored 24/7 · Zero delay</div>
         </div>
 
-        <div class="ap-pipeline__arrow">→</div>
+        <div class="ap-pipeline__arrow"></div>
 
         <div class="ap-pipeline__node">
           <div class="ap-pipeline__icon">🧠</div>
@@ -132,7 +132,7 @@ get_header();
           <div class="ap-pipeline__sub">LLM analysis · Extraction · Scoring</div>
         </div>
 
-        <div class="ap-pipeline__arrow">→</div>
+        <div class="ap-pipeline__arrow"></div>
 
         <div class="ap-pipeline__node">
           <div class="ap-pipeline__icon">💡</div>
@@ -140,7 +140,7 @@ get_header();
           <div class="ap-pipeline__sub">Reports · Signals · Alerts · Custom outputs</div>
         </div>
 
-        <div class="ap-pipeline__arrow">→</div>
+        <div class="ap-pipeline__arrow"></div>
 
         <div class="ap-pipeline__node">
           <div class="ap-pipeline__icon">📲</div>
