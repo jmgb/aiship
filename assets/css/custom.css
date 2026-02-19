@@ -1819,7 +1819,7 @@ a.et_pb_button {
 
   .ap-mobile-br { display: block; }
 
-  .ap-doc-item__code { white-space: normal; }
+  .ap-doc-item__code { white-space: normal; min-width: 5.5rem; }
 
   .ap-terminal__body {
     padding: var(--space-4) var(--space-4);
