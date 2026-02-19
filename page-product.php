@@ -24,8 +24,8 @@ get_header();
       </div>
 
       <h1 class="ap-hero__title">
-        Every corporate disclosure.<br>
-        <em>Analyzed in seconds.</em>
+        Every corporate disclosure,<br>
+        <em>Analyzed in seconds</em>
       </h1>
 
       <p class="ap-hero__sub">
@@ -78,7 +78,7 @@ get_header();
 
         <div class="ap-stat-item ap-stat-item--center" data-aiship-animate>
           <span class="ap-stat__value">&lt; 5<span class="ap-stat__unit">s</span></span>
-          <span class="ap-stat__label">Filing to delivery</span>
+          <span class="ap-stat__label">Processing Time: Filing to delivery</span>
         </div>
 
         <div class="ap-stat-item" data-aiship-animate>
@@ -88,7 +88,7 @@ get_header();
 
         <div class="ap-stat-item" data-aiship-animate>
           <span class="ap-stat__value aiship-counter" data-target="3800" data-suffix="+">0</span>
-          <span class="ap-stat__label">SEC reports &amp; press releases processed daily</span>
+          <span class="ap-stat__label">SEC filings &amp; press releases processed daily</span>
         </div>
 
       </div>
@@ -135,7 +135,7 @@ get_header();
         <div class="ap-pipeline__arrow">→</div>
 
         <div class="ap-pipeline__node">
-          <div class="ap-pipeline__icon">📊</div>
+          <div class="ap-pipeline__icon">💡</div>
           <div class="ap-pipeline__label">Structured Intelligence</div>
           <div class="ap-pipeline__sub">Reports · Signals · Alerts · Custom outputs</div>
         </div>
@@ -476,15 +476,19 @@ get_header();
         <?php
         $docs = [
           [ 'code' => '10-K',    'name' => 'Annual Report',         'desc' => 'Full-year financial performance & outlook' ],
-          [ 'code' => '10-Q',    'name' => 'Quarterly Report',      'desc' => 'Q1–Q3 financials & management commentary' ],
+          [ 'code' => '10-Q',    'name' => 'Quarterly Report',      'desc' => 'Quarterly financials & management commentary' ],
           [ 'code' => '8-K',     'name' => 'Material Events',       'desc' => 'M&A, leadership changes, guidance updates' ],
-          [ 'code' => 'S-1',     'name' => 'IPO Registration',      'desc' => 'Pre-IPO prospectus & financial history' ],
-          [ 'code' => 'DEF 14A', 'name' => 'Proxy Statement',       'desc' => 'Executive compensation & governance' ],
+          [ 'code' => 'S-1',     'name' => 'Registration Statement', 'desc' => 'New share offerings — IPOs & secondary issuances' ],
+          [ 'code' => 'F-1',     'name' => 'Foreign Registration',  'desc' => 'S-1 equivalent for non-US companies' ],
+          [ 'code' => 'S-3 & F-3', 'name' => 'Shelf Registration',  'desc' => 'Streamlined offerings for seasoned issuers' ],
+          [ 'code' => 'DEF 14A', 'name' => 'Proxy Statement',       'desc' => 'Shareholder meetings information (executive compensation & governance)' ],
           [ 'code' => 'SC 13D',  'name' => 'Major Shareholder',     'desc' => 'Activist investors & significant positions' ],
           [ 'code' => 'Form 4',  'name' => 'Insider Transactions',  'desc' => 'Directors & officers buying or selling' ],
           [ 'code' => '13-F',    'name' => 'Institutional Holdings', 'desc' => 'What the largest funds own each quarter' ],
-          [ 'code' => '20-F',    'name' => 'Foreign Filer Report',   'desc' => 'Non-US companies listed on US exchanges' ],
+          [ 'code' => '6-K & 20-F',    'name' => 'Foreign Filer Report',   'desc' => 'Non-US companies listed on US exchanges' ],
           [ 'code' => 'PR',      'name' => 'Press Releases',        'desc' => 'Official company announcements' ],
+          [ 'code' => 'NASDAQ',  'name' => 'Exchange Notifications', 'desc' => 'Listing compliance, halts & corporate actions' ],
+          [ 'code' => 'FINRA',   'name' => 'Regulatory Alerts',     'desc' => 'Trading halts, rule changes & enforcement' ],
         ];
         foreach ( $docs as $doc ) : ?>
           <div class="ap-doc-item">
