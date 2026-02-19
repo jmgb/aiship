@@ -480,12 +480,12 @@ get_header();
           [ 'code' => '8-K',     'name' => 'Material Events',       'desc' => 'M&A, leadership changes, guidance updates' ],
           [ 'code' => 'S-1',     'name' => 'Registration Statement', 'desc' => 'New share offerings — IPOs & secondary issuances' ],
           [ 'code' => 'F-1',     'name' => 'Foreign Registration',  'desc' => 'S-1 equivalent for non-US companies' ],
-          [ 'code' => 'S-3<br class="ap-mobile-br">&amp; F-3', 'name' => 'Shelf Registration',  'desc' => 'Streamlined offerings for seasoned issuers' ],
+          [ 'code' => 'S-3 & F-3', 'name' => 'Shelf Registration',  'desc' => 'Streamlined offerings for seasoned issuers' ],
           [ 'code' => 'DEF 14A', 'name' => 'Proxy Statement',       'desc' => 'Shareholder meetings information (executive compensation & governance)' ],
           [ 'code' => 'SC 13D',  'name' => 'Major Shareholder',     'desc' => 'Activist investors & significant positions' ],
           [ 'code' => 'Form 4',  'name' => 'Insider Transactions',  'desc' => 'Directors & officers buying or selling' ],
           [ 'code' => '13-F',    'name' => 'Institutional Holdings', 'desc' => 'What the largest funds own each quarter' ],
-          [ 'code' => '6-K<br class="ap-mobile-br">&amp; 20-F',    'name' => 'Foreign Filer Report',   'desc' => 'Non-US companies listed on US exchanges' ],
+          [ 'code' => '6-K & 20-F',    'name' => 'Foreign Filer Report',   'desc' => 'Non-US companies listed on US exchanges' ],
           [ 'code' => 'PR',      'name' => 'Press Releases',        'desc' => 'Official company announcements' ],
           [ 'code' => 'NASDAQ',  'name' => 'Exchange Notifications', 'desc' => 'Listing compliance, halts & corporate actions' ],
           [ 'code' => 'FINRA',   'name' => 'Regulatory Alerts',     'desc' => 'Trading halts, rule changes & enforcement' ],
@@ -493,7 +493,7 @@ get_header();
         foreach ( $docs as $doc ) : ?>
           <div class="ap-doc-item">
             <div class="ap-doc-item__header">
-              <span class="ap-doc-item__code"><?php echo wp_kses( $doc['code'], [ 'br' => [ 'class' => [] ] ] ); ?></span>
+              <span class="ap-doc-item__code"><?php echo esc_html( $doc['code'] ); ?></span>
               <span class="ap-doc-item__name"><?php echo esc_html( $doc['name'] ); ?></span>
             </div>
             <p class="ap-doc-item__desc"><?php echo esc_html( $doc['desc'] ); ?></p>

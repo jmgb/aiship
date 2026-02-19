@@ -1054,8 +1054,6 @@ a.et_pb_button {
   white-space: nowrap;
 }
 
-.ap-mobile-br { display: none; }
-
 .ap-doc-item__name {
   font-size: var(--text-sm);
   font-weight: 600;
@@ -1817,9 +1815,7 @@ a.et_pb_button {
     padding: var(--space-3);
   }
 
-  .ap-mobile-br { display: block; }
-
-  .ap-doc-item__code { white-space: normal; min-width: 5.5rem; }
+  .ap-doc-item__code { white-space: normal; min-width: 2.8rem; }
 
   .ap-terminal__body {
     padding: var(--space-4) var(--space-4);
