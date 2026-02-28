@@ -30,8 +30,8 @@ get_header();
 
       <p class="ai-hero__sub">
         A white-label platform built for funds, family offices, and RIAs
-        to onboard investors, manage portfolios, and automate compliance —
-        from day one.
+        to onboard retail, HNW, and institutional investors, manage portfolios,
+        and automate compliance — from day one.
       </p>
 
       <div class="ai-hero__ctas">
@@ -140,7 +140,7 @@ get_header();
       <div class="ap-section-header">
         <span class="aiship-badge neutral">Platform</span>
         <h2>Core Modules</h2>
-        <p>Six integrated modules covering the full investor lifecycle.</p>
+        <p>Nine integrated modules covering the full investor lifecycle.</p>
       </div>
 
       <div class="ai-modules-grid">
@@ -149,7 +149,7 @@ get_header();
           [
             'icon'  => '&#128203;',
             'title' => 'Investor Onboarding',
-            'body'  => 'Digital KYC/AML, document upload, e-signature, and automated approval workflows — onboard investors in minutes.',
+            'body'  => 'Digital KYC/AML, document upload, e-signature, and automated approval workflows. Multi-investor type support — retail, HNW, and institutional — with region-specific forms.',
           ],
           [
             'icon'  => '&#128202;',
@@ -169,12 +169,27 @@ get_header();
           [
             'icon'  => '&#127974;',
             'title' => 'Fund Management',
-            'body'  => 'Multi-fund support with fee calculation, NAV computation, capital calls, distributions, and waterfall structures.',
+            'body'  => 'Multi-fund support with fee calculation, NAV computation, capital calls, and distributions. Full fund lifecycle: deposit, parking, product selection, utilization, and waterfall structures.',
           ],
           [
             'icon'  => '&#9997;&#65039;',
             'title' => 'Contract & e-Signature',
             'body'  => 'Digital subscription agreements, side letters, and amendments with integrated e-signature and version control.',
+          ],
+          [
+            'icon'  => '&#128276;',
+            'title' => 'Notifications & Alerts',
+            'body'  => 'Real-time alerts for investors and admins — SMS, email, and push notifications with customizable templates and an in-app alert center.',
+          ],
+          [
+            'icon'  => '&#128179;',
+            'title' => 'Transaction Management',
+            'body'  => 'End-to-end tracking of deposits, withdrawals, and transfers via Virtual IBANs with real-time status updates and reconciliation.',
+          ],
+          [
+            'icon'  => '&#128230;',
+            'title' => 'Investment Products',
+            'body'  => 'Configure and manage investment products with return rates, eligibility criteria, investment limits, and automated contracting workflows.',
           ],
         ];
         foreach ( $modules as $m ) : ?>
@@ -373,6 +388,7 @@ get_header();
           [ 'icon' => '&#9201;&#65039;', 'title' => '99.9% SLA',      'desc' => 'Guaranteed uptime backed by multi-AZ redundancy.' ],
           [ 'icon' => '&#128260;', 'title' => 'Disaster Recovery',    'desc' => 'Automated backups with cross-region failover and RTO < 1 hour.' ],
           [ 'icon' => '&#128101;', 'title' => 'RBAC',                 'desc' => 'Role-based access control with granular permission policies.' ],
+          [ 'icon' => '&#128222;', 'title' => '24/7 Support & SLA', 'desc' => 'Dedicated support team with severity-based response SLAs, proactive monitoring, and continuous system optimization.' ],
         ];
         foreach ( $trust as $t ) : ?>
           <div class="ai-trust-item" data-aiship-animate>
@@ -445,6 +461,14 @@ get_header();
 <span class="t-meta">  &#8594; Fund Fact Sheet           Published to portal</span>
 <span class="t-meta">  &#8594; Compliance Summary        Sent to board</span>
 <span class="t-meta">  &#8594; Tax Package (K-1s)        In preparation</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-key">FINANCIAL REPORTS</span>
+<span class="t-pos">  [&#10003;] Balance Sheet            Generated &amp; verified</span>
+<span class="t-pos">  [&#10003;] Income Statement         Generated &amp; verified</span>
+<span class="t-pos">  [&#10003;] Cash Flow Statement      Generated &amp; verified</span>
+<span class="t-pos">  [&#10003;] Tax Reports (K-1s)       In preparation</span>
 <span class="ap-terminal__cursor">&#9608;</span></pre>
         </div>
 
