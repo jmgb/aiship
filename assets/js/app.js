@@ -119,13 +119,37 @@
   }
 
   /* ----------------------------------------------------------
-     5. INIT
+     5. WIZARD ANIMATION — highlight secuencial al scroll
+     ---------------------------------------------------------- */
+  function initWizardAnimation() {
+    var wizard = document.querySelector('.ai-wizard');
+    if (!wizard || !('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var steps = wizard.querySelectorAll('.ai-wizard__step');
+        steps.forEach(function (step, idx) {
+          setTimeout(function () {
+            step.classList.add('ai-wizard__step--active');
+          }, idx * 200);
+        });
+        observer.unobserve(wizard);
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(wizard);
+  }
+
+  /* ----------------------------------------------------------
+     6. INIT
      ---------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initHeaderScroll();
     initCounters();
     logTickerSource();
+    initWizardAnimation();
   });
 
 })();

@@ -105,7 +105,7 @@ get_header();
       <div class="ap-section-header">
         <span class="aiship-badge neutral">Architecture</span>
         <h2>How It Works</h2>
-        <p>Five steps from raw disclosure to actionable intelligence.</p>
+        <p>Raw disclosure to actionable intelligence — in five steps.</p>
       </div>
 
       <div class="ap-pipeline">
