@@ -154,7 +154,7 @@ get_header();
           [
             'icon'  => '&#128202;',
             'title' => 'Portfolio Dashboard',
-            'body'  => 'Real-time portfolio views with NAV tracking, P&L attribution, asset allocation breakdowns, and historical performance.',
+            'body'  => 'Real-time portfolio views with NAV tracking, P&L attribution, asset allocation breakdowns, historical performance, and risk-adjusted metrics including Sharpe Ratio, Beta, Tracking Error, and Maximum Drawdown.',
           ],
           [
             'icon'  => '&#9881;&#65039;',
@@ -169,7 +169,7 @@ get_header();
           [
             'icon'  => '&#127974;',
             'title' => 'Fund Management',
-            'body'  => 'Multi-fund support with fee calculation, NAV computation, capital calls, and distributions. Full fund lifecycle: deposit, parking, product selection, utilization, and waterfall structures.',
+            'body'  => 'Multi-fund support with fee calculation, NAV computation, capital calls, and distributions. Full fund lifecycle: deposit, parking, product selection, utilization, and waterfall structures. Fee analysis by investor type with industry benchmark comparison.',
           ],
           [
             'icon'  => '&#9997;&#65039;',
@@ -245,9 +245,67 @@ get_header();
 
 
   <!-- =========================================================
+       SECTION 6 — THIRD-PARTY INTEGRATIONS
+       ========================================================= -->
+  <section class="ap-section" id="integrations">
+    <div class="ap-container">
+
+      <div class="ap-section-header">
+        <span class="aiship-badge neutral">Integrations</span>
+        <h2>Third-Party Integrations</h2>
+        <p>Pre-built connectors to industry-standard providers — plug in and go live.</p>
+      </div>
+
+      <div class="ai-integrations-grid">
+        <?php
+        $integrations = [
+          [
+            'icon'  => '&#128100;',
+            'title' => 'KYC / AML Providers',
+            'desc'  => 'Automated identity verification with leading compliance APIs.',
+            'items' => ['Identity Verification API', 'Facial Recognition', 'Document Validation', 'PEP &amp; Watchlist Check'],
+          ],
+          [
+            'icon'  => '&#128737;&#65039;',
+            'title' => 'Sanction Screening',
+            'desc'  => 'Real-time screening against global regulatory watchlists.',
+            'items' => ['UN Consolidated List', 'OFAC SDN List', 'EU Sanctions List', 'Local Regulator Lists'],
+          ],
+          [
+            'icon'  => '&#128179;',
+            'title' => 'Payment Gateways',
+            'desc'  => 'Seamless fund transfers and multi-currency settlement.',
+            'items' => ['Virtual IBAN Generation', 'Wire Transfer Processing', 'Multi-Currency Support', 'Real-Time Reconciliation'],
+          ],
+          [
+            'icon'  => '&#128276;',
+            'title' => 'Notification Services',
+            'desc'  => 'Omni-channel communications for investors and admins.',
+            'items' => ['SMS Notifications', 'Email Templates', 'Push Notifications', 'In-App Alert Center'],
+          ],
+        ];
+        foreach ( $integrations as $intg ) : ?>
+          <div class="ai-integration" data-aiship-animate>
+            <div class="ai-integration__icon"><?php echo $intg['icon']; ?></div>
+            <div class="ai-integration__title"><?php echo esc_html( $intg['title'] ); ?></div>
+            <div class="ai-integration__desc"><?php echo esc_html( $intg['desc'] ); ?></div>
+            <ul class="ai-integration__list">
+              <?php foreach ( $intg['items'] as $item ) : ?>
+                <li><?php echo $item; ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
        SECTION 6 — PORTFOLIO DASHBOARD SHOWCASE
        ========================================================= -->
-  <section class="ap-section">
+  <section class="ap-section ap-section--alt">
     <div class="ap-container">
 
       <div class="ap-section-header">
@@ -317,6 +375,137 @@ get_header();
               <span class="ai-dashboard__feed-text">Compliance check passed — zero exceptions</span>
               <span class="ai-dashboard__feed-time">3h ago</span>
             </div>
+          </div>
+
+          <div class="ai-dashboard__sep"></div>
+
+          <div class="ai-dashboard__feed-title">Risk-Adjusted Metrics</div>
+          <div class="ai-dashboard__risk-grid">
+            <?php
+            $risk_metrics = [
+              ['label' => 'Sharpe Ratio',    'val' => '1.84',   'neg' => false],
+              ['label' => 'Portfolio Beta',   'val' => '0.92',   'neg' => false],
+              ['label' => 'Tracking Error',   'val' => '2.1%',   'neg' => false],
+              ['label' => 'Info Ratio',       'val' => '1.23',   'neg' => false],
+              ['label' => 'Max Drawdown',     'val' => '-8.4%',  'neg' => true],
+              ['label' => 'Volatility Ann.',  'val' => '12.7%',  'neg' => false],
+            ];
+            foreach ( $risk_metrics as $rm ) : ?>
+              <div class="ai-dashboard__risk-item">
+                <span class="ai-dashboard__risk-val<?php echo $rm['neg'] ? ' ai-dashboard__risk-val--neg' : ''; ?>"><?php echo esc_html( $rm['val'] ); ?></span>
+                <span class="ai-dashboard__risk-label"><?php echo esc_html( $rm['label'] ); ?></span>
+              </div>
+            <?php endforeach; ?>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SECTION 8 — INVESTOR SELF-SERVICE PORTAL
+       ========================================================= -->
+  <section class="ap-section">
+    <div class="ap-container">
+
+      <div class="ap-section-header">
+        <span class="aiship-badge neutral">Investor View</span>
+        <h2>Investor Self-Service Portal</h2>
+        <p>A white-label portal where your investors track performance, manage positions, and take action.</p>
+      </div>
+
+      <div class="ai-investor" data-aiship-animate>
+
+        <div class="ai-investor__bar">
+          <div class="ai-dashboard__dots">
+            <span class="ai-dashboard__dot ai-dashboard__dot--r"></span>
+            <span class="ai-dashboard__dot ai-dashboard__dot--y"></span>
+            <span class="ai-dashboard__dot ai-dashboard__dot--g"></span>
+          </div>
+          <span class="ai-dashboard__title">investor_portal &middot; my_portfolio</span>
+          <span class="ai-dashboard__live">&#9679; LIVE</span>
+        </div>
+
+        <div class="ai-investor__body">
+
+          <div class="ai-investor__metrics">
+            <?php
+            $investor_metrics = [
+              ['val' => '$1.24M', 'label' => 'Total Portfolio Value'],
+              ['val' => '+$187K', 'label' => 'Total P&amp;L',         'class' => 'ai-investor__metric-val--pos'],
+              ['val' => '$980K',  'label' => 'Total Invested'],
+              ['val' => 'EQTY-I', 'label' => 'Best Performer'],
+            ];
+            foreach ( $investor_metrics as $im ) : ?>
+              <div class="ai-investor__metric">
+                <span class="ai-investor__metric-val<?php echo isset($im['class']) ? ' ' . $im['class'] : ''; ?>"><?php echo $im['val']; ?></span>
+                <span class="ai-investor__metric-label"><?php echo $im['label']; ?></span>
+              </div>
+            <?php endforeach; ?>
+          </div>
+
+          <div class="ai-dashboard__sep"></div>
+
+          <div class="ai-investor__cols">
+
+            <div class="ai-investor__chart">
+              <div class="ai-dashboard__feed-title">Investment Allocation</div>
+              <?php
+              $alloc = [
+                ['name' => 'Equities',     'pct' => '45%', 'color' => '#DB0EB7'],
+                ['name' => 'Fixed Income',  'pct' => '25%', 'color' => '#60a5fa'],
+                ['name' => 'Alternatives',  'pct' => '20%', 'color' => '#00d68f'],
+                ['name' => 'Cash',          'pct' => '10%', 'color' => '#ffd166'],
+              ];
+              foreach ( $alloc as $a ) : ?>
+                <div class="ai-investor__alloc-item">
+                  <span class="ai-investor__alloc-dot" style="background:<?php echo $a['color']; ?>"></span>
+                  <span class="ai-investor__alloc-name"><?php echo esc_html( $a['name'] ); ?></span>
+                  <span class="ai-investor__alloc-pct"><?php echo esc_html( $a['pct'] ); ?></span>
+                </div>
+              <?php endforeach; ?>
+            </div>
+
+            <div class="ai-investor__performers">
+              <div class="ai-dashboard__feed-title">Top Performers</div>
+              <?php
+              $top = [
+                ['fund' => 'Global Equity Fund I',    'ret' => '+12.4%'],
+                ['fund' => 'Tech Growth Fund II',     'ret' => '+9.8%'],
+                ['fund' => 'Fixed Income Plus',       'ret' => '+5.2%'],
+                ['fund' => 'Alternative Alpha',       'ret' => '+4.7%'],
+              ];
+              foreach ( $top as $t ) : ?>
+                <div class="ai-investor__perf-item">
+                  <span class="ai-investor__perf-fund"><?php echo esc_html( $t['fund'] ); ?></span>
+                  <span class="ai-investor__perf-ret"><?php echo esc_html( $t['ret'] ); ?></span>
+                </div>
+              <?php endforeach; ?>
+            </div>
+
+          </div>
+
+          <div class="ai-dashboard__sep"></div>
+
+          <div class="ai-dashboard__feed-title">Self-Service Actions</div>
+          <div class="ai-investor__actions">
+            <?php
+            $actions = [
+              ['icon' => '&#43;',     'label' => 'Additional Investment'],
+              ['icon' => '&#8595;',   'label' => 'Partial Redemption'],
+              ['icon' => '&#8644;',   'label' => 'Rebalance Portfolio'],
+              ['icon' => '&#8646;',   'label' => 'Transfer Between Products'],
+            ];
+            foreach ( $actions as $act ) : ?>
+              <div class="ai-investor__action">
+                <span class="ai-investor__action-icon"><?php echo $act['icon']; ?></span>
+                <span class="ai-investor__action-label"><?php echo esc_html( $act['label'] ); ?></span>
+              </div>
+            <?php endforeach; ?>
           </div>
 
         </div>
@@ -469,9 +658,101 @@ get_header();
 <span class="t-pos">  [&#10003;] Income Statement         Generated &amp; verified</span>
 <span class="t-pos">  [&#10003;] Cash Flow Statement      Generated &amp; verified</span>
 <span class="t-pos">  [&#10003;] Tax Reports (K-1s)       In preparation</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-key">FEE ANALYSIS</span>
+<span class="t-meta">  Management Fee (1.5% AUM)     </span><span class="t-val">$12,708,628</span>
+<span class="t-meta">  Performance Fee (20% hurdle)   </span><span class="t-val">$4,230,412</span>
+<span class="t-meta">  Admin &amp; Custody                </span><span class="t-val">$847,242</span>
+<span class="t-pos">  Total Fees Collected           $17,786,282</span>
+<span class="t-meta">  Industry Benchmark             1.42% avg</span>
+<span class="t-meta">  Your Effective Rate             2.10%</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-key">STATEMENT DELIVERY</span>
+<span class="t-pos">  [&#10003;] Monthly Portfolio Statements    </span><span class="t-val">847 generated</span>
+<span class="t-pos">  [&#10003;] Quarterly Summary Reports      </span><span class="t-val">847 generated</span>
+<span class="t-key">  DELIVERY TRACKING</span>
+<span class="t-pos">  [&#10003;] Email                          </span><span class="t-val">842 delivered</span>
+<span class="t-neg">  [&#10005;] Email                            </span><span class="t-val">5 failed</span>
+<span class="t-pos">  [&#10003;] Portal                         </span><span class="t-val">847 published</span>
+<span class="t-meta">  Access Rate                       78% opened</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-key">REGULATORY FILINGS</span>
+<span class="t-pos">  [&#10003;] SEC Form ADV                   </span><span class="t-val">Filed — Dec 15</span>
+<span class="t-pos">  [&#10003;] Form 13F                       </span><span class="t-val">Filed — Jan 14</span>
+<span class="t-meta">  [&#9679;] ESMA Annual Report              Due — Mar 31</span>
+<span class="t-neg">  [!] Form PF                              Overdue — Feb 14</span>
+<span class="t-key">  COMPLIANCE ALERTS</span>
+<span class="t-meta">  &#8594; Upcoming: Form ADV Amendment — Q1 2026</span>
+<span class="t-meta">  &#8594; Upcoming: Annual Compliance Review — Apr 2026</span>
 <span class="ap-terminal__cursor">&#9608;</span></pre>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SECTION 12 — WHITE-LABEL BRANDING
+       ========================================================= -->
+  <section class="ap-section">
+    <div class="ap-container">
+
+      <div class="ap-section-header">
+        <span class="aiship-badge neutral">White-Label</span>
+        <h2>Your Brand, Your Platform</h2>
+        <p>Every deployment is fully branded — your logo, your colors, your domain. Your investors never see ours.</p>
+      </div>
+
+      <div class="ai-branding__mockup" data-aiship-animate>
+
+        <div class="ai-branding__sidebar">
+          <div class="ai-branding__logo">YOUR LOGO</div>
+          <?php
+          $nav_items = ['Dashboard', 'Investors', 'Portfolios', 'Reports', 'Settings'];
+          foreach ( $nav_items as $i => $nav ) : ?>
+            <div class="ai-branding__nav-item<?php echo $i === 0 ? ' ai-branding__nav-item--active' : ''; ?>">
+              <?php echo esc_html( $nav ); ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <div class="ai-branding__main">
+          <div class="ai-branding__topbar">
+            <span class="ai-branding__domain">app.yourfirm.com</span>
+            <span class="ai-branding__user">Admin &middot; Your Firm Capital</span>
+          </div>
+          <div class="ai-branding__content">
+            <div class="ai-branding__placeholder">
+              <span>Your branded dashboard content</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ai-branding__features">
+        <?php
+        $branding_features = [
+          ['icon' => '&#127912;', 'title' => 'Custom Color Scheme',    'desc' => 'Match every element to your brand palette — buttons, charts, badges, and backgrounds.'],
+          ['icon' => '&#128247;', 'title' => 'Logo &amp; Identity',    'desc' => 'Your logo on login screens, reports, emails, investor portal, and PDF statements.'],
+          ['icon' => '&#127760;', 'title' => 'Custom Domain',          'desc' => 'Serve the platform from your own domain with SSL — investors see only your brand.'],
+          ['icon' => '&#9993;&#65039;', 'title' => 'Branded Communications', 'desc' => 'Emails, SMS, and notifications sent from your domain with your templates and tone.'],
+        ];
+        foreach ( $branding_features as $bf ) : ?>
+          <div class="ai-branding__feature" data-aiship-animate>
+            <div class="ai-branding__feature-icon"><?php echo $bf['icon']; ?></div>
+            <div class="ai-branding__feature-title"><?php echo $bf['title']; ?></div>
+            <div class="ai-branding__feature-desc"><?php echo esc_html( $bf['desc'] ); ?></div>
+          </div>
+        <?php endforeach; ?>
       </div>
 
     </div>
