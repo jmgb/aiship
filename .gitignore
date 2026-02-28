@@ -17,3 +17,6 @@ dist/
 # WordPress sensibles
 wp-config.php
 *.log
+
+# Documentos internos
+propuesta.pdf
