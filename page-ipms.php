@@ -24,8 +24,8 @@ get_header();
       </div>
 
       <h1 class="ai-hero__title">
-        Investor onboarding to portfolio management.<br>
-        <em>One platform. Fully automated.</em>
+        Investor onboarding to<br>
+        <em>portfolio management.</em>
       </h1>
 
       <p class="ai-hero__sub">

@@ -3029,3 +3029,19 @@ a.et_pb_button {
     font-size: var(--text-xl);
   }
 }
+
+/* --- IPMS Divi section headings --- */
+.et_pb_text_4 h2,
+.et_pb_text_7 h2,
+.et_pb_text_9 h2,
+.et_pb_text_12 h2,
+.et_pb_text_15 h2,
+.et_pb_text_18 h2,
+.et_pb_text_21 h2,
+.et_pb_text_24 h2,
+.et_pb_text_27 h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 64px;
+  color: #ffffff !important;
+  line-height: 1.1em;
+}
