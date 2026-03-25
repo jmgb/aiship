@@ -3518,6 +3518,164 @@ a.et_pb_button {
   }
 }
 
+/* ==========================================================
+   13. PÁGINAS LEGALES — Legal Notice, Privacy, Cookie Policy
+   ==========================================================
+   Envolver el HTML en <div class="legal-page"> dentro del
+   módulo de texto de Divi. Los estilos fuerzan fondo navy
+   en los contenedores padre de Divi.
+   ========================================================== */
+
+/* --- Forzar fondo navy en contenedores padre (página WP estándar, no Divi Builder) --- */
+#main-content:has(.legal-page),
+.container:has(.legal-page),
+#left-area:has(.legal-page),
+.entry-content:has(.legal-page) {
+  background-color: var(--c-bg) !important;
+}
+
+/* También cubrir si se usa dentro de Divi Builder */
+.et_pb_section:has(.legal-page) {
+  background-color: var(--c-bg) !important;
+}
+
+/* Ocultar el h1 de WordPress (el título ya lo pone la página) */
+.entry-content:has(.legal-page) ~ h1.entry-title,
+article:has(.legal-page) > h1.entry-title {
+  color: var(--c-white) !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* Limitar ancho del contenedor padre */
+#content-area:has(.legal-page) #left-area {
+  max-width: 780px;
+  margin: 0 auto;
+  float: none;
+}
+
+/* --- Container legal --- */
+.legal-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+/* --- Encabezado de sección (h4) --- */
+.legal-page h4,
+.legal-page h4.wp-block-heading {
+  font-family: var(--font-sans) !important;
+  font-size: var(--text-xl) !important;
+  font-weight: 700 !important;
+  color: var(--c-white) !important;
+  letter-spacing: -0.01em;
+  margin: var(--space-12) 0 var(--space-4) !important;
+  padding-bottom: var(--space-3) !important;
+  border-bottom: 1px solid var(--c-gray-3);
+  position: relative;
+}
+
+/* Línea de acento magenta debajo del heading */
+.legal-page h4::after,
+.legal-page h4.wp-block-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background-color: var(--c-accent);
+}
+
+/* Primer heading sin margin-top extra */
+.legal-page h4:first-child,
+.legal-page h4.wp-block-heading:first-child {
+  margin-top: 0 !important;
+}
+
+/* --- Párrafos --- */
+.legal-page p {
+  font-family: var(--font-sans) !important;
+  font-size: var(--text-sm) !important;
+  line-height: 1.85 !important;
+  color: var(--c-gray-2) !important;
+  margin: 0 0 var(--space-4) !important;
+}
+
+/* --- Listas --- */
+.legal-page ul,
+.legal-page ol {
+  padding-left: 0 !important;
+  margin: var(--space-4) 0 var(--space-6) !important;
+  list-style: none !important;
+}
+
+.legal-page ul li {
+  font-size: var(--text-sm) !important;
+  color: var(--c-gray-2) !important;
+  line-height: 1.8 !important;
+  padding: var(--space-2) 0 var(--space-2) var(--space-6) !important;
+  position: relative;
+  border-bottom: 1px solid rgba(58, 58, 92, 0.4);
+}
+
+.legal-page ul li:last-child {
+  border-bottom: none;
+}
+
+.legal-page ul li::before {
+  content: '\2192';          /* → */
+  position: absolute;
+  left: 0;
+  color: var(--c-accent);
+  font-weight: 600;
+}
+
+/* --- Strong / labels --- */
+.legal-page strong {
+  color: var(--c-white) !important;
+  font-weight: 600 !important;
+}
+
+/* --- Links --- */
+.legal-page a {
+  color: var(--c-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.legal-page a:hover {
+  border-bottom-color: var(--c-accent) !important;
+  opacity: 0.85;
+}
+
+/* --- Card de identificación (primera sección con datos de empresa) --- */
+.legal-page h4#identification-and-ownership + p + ul {
+  background-color: var(--c-bg-2) !important;
+  border: var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--space-6) !important;
+  margin: var(--space-6) 0 !important;
+}
+
+.legal-page h4#identification-and-ownership + p + ul li {
+  border-bottom-color: var(--c-gray-3);
+  padding: var(--space-3) 0 var(--space-3) var(--space-6) !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 767px) {
+  .legal-page {
+    padding: var(--space-4) 0 var(--space-8);
+  }
+
+  .legal-page h4,
+  .legal-page h4.wp-block-heading {
+    font-size: var(--text-lg) !important;
+    margin-top: var(--space-8) !important;
+  }
+}
+
 /* --- IPMS Divi section headings --- */
 .et_pb_text_4 h2,
 .et_pb_text_7 h2,
